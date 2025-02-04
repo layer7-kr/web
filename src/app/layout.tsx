@@ -1,6 +1,9 @@
+import * as s from './layout.css';
+
 import type { Metadata } from 'next';
 
 import '@/styles/global.css';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'Layer7',
@@ -13,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ko'>
-      <body>{children}</body>
+    <html suppressHydrationWarning>
+      <body className={s.body}>
+        <ThemeProvider enableSystem>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
