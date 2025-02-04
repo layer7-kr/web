@@ -2,7 +2,7 @@ import cn from 'classnames';
 import Logo from './assets/logo.svg';
 import LogoGrayscale from './assets/logo_grayscale.svg';
 
-import * as s from './styles.css';
+import * as s from './style.css';
 
 interface Layer7Symbol {
   colored?: boolean;
