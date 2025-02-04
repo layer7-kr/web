@@ -1,16 +1,12 @@
 import Typo from "@/components/Typo";
 import * as s from "./style.css";
 import { weight } from "@/styles/fonts/values/weight";
-
-interface ContactInfoItemProps {
-  name: string;
-  [key: string]: string;
-}
+import { JSONContactInfoData } from "@/types/json";
 
 export default function ContactInfoItem({
   name,
   ...rest
-}: ContactInfoItemProps) {
+}: JSONContactInfoData) {
   return (
     <div className={s.base}>
       <Typo as="h4" size={18} weight={weight.semibold}>{name}</Typo>
