@@ -1,4 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
+import { pretendard } from './fonts/index.css';
+import './reset.css';
 
 globalStyle('html, body', {
   margin: 0,
@@ -7,6 +9,7 @@ globalStyle('html, body', {
 
 globalStyle('*', {
   boxSizing: 'border-box',
+  fontFamily: pretendard,
   color: '#000',
   lineHeight: 1.5,
   fontWeight: 400,
