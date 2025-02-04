@@ -17,6 +17,8 @@ export const divider = style({
   width: 250,
   height: 1,
 
+  border: 'none',
+
   backgroundColor: "#BFBFBF",
 });
 
@@ -56,19 +58,19 @@ export const nowSection = style({
   padding: "0 20px",
 
   ...flexCenter({
-    direction: 'column',
+    direction: "column",
     gap: 32,
   }),
 });
 
 export const nowContent = style({
-    maxWidth: 700,
+  maxWidth: 700,
 
-    textAlign: 'center',
-})
+  textAlign: "center",
+});
 
 globalStyle(`${nowContent} b`, {
-    fontWeight: weight.semibold,
-    
-    color: 'inherit'
+  fontWeight: weight.semibold,
+
+  color: "inherit",
 });
