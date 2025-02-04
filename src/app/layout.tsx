@@ -3,8 +3,8 @@ import * as s from './layout.css';
 import type { Metadata } from 'next';
 
 import Header from '@/components/Header';
+import Provider from '@/components/Provider';
 import '@/styles/global.css';
-import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'Layer7',
@@ -17,10 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning>
+    <html>
       <body className={s.body}>
-        <Header className={s.header} />
-        <ThemeProvider>{children}</ThemeProvider>
+        <Provider>
+          <Header className={s.header} />
+          {children}
+        </Provider>
       </body>
     </html>
   );
