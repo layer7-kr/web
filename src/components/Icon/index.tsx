@@ -1,29 +1,31 @@
 import cn from 'classnames';
-import Logo from './assets/logo.svg';
-import LogoGrayscale from './assets/logo_grayscale.svg';
-
+import { IconName, IconNameMap } from './icon-set';
 import * as s from './style.css';
 
-interface Layer7Symbol {
-  colored?: boolean;
-  size: number;
+interface IconProps {
+  name: IconName;
+  size?: number;
+  color?: string;
   className?: string;
   onClick?: () => void;
 }
 
-export default function Layer7Symbol(props: Layer7Symbol) {
-  const { colored = false, size, className, onClick } = props;
+export default function Icon(props: IconProps) {
+  const { name, size = 20, color = '#000', className, onClick } = props;
 
-  const LogoComponent = colored ? Logo : LogoGrayscale;
+  const IconComponent = IconNameMap[name];
 
   const renderedIcon = (
-    <LogoComponent
+    <IconComponent
       className={cn(className, s.base)}
       width={size}
       height={size}
+      color={color}
       style={{
         minWidth: size,
         minHeight: size,
+        color: color,
+        fill: color,
       }}
     />
   );

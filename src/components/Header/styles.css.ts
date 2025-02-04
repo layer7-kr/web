@@ -12,8 +12,27 @@ export const container = style({
   ...flexBetween(),
 });
 
+export const leading = style({
+  ...flexCenter({
+    gap: 19,
+  }),
+});
+
 export const items = style({
   ...flexCenter({
     gap: 40,
+  }),
+});
+
+export const line = style({
+  width: 1,
+  height: 16,
+  background: 'rgba(255, 255, 255, 0.28)',
+});
+
+export const colorScheme = style({
+  cursor: 'pointer',
+  ...flexCenter({
+    gap: 6,
   }),
 });
