@@ -1,9 +1,5 @@
-import Layer7Symbol from '@/components/Layer7Symbol';
+import * as s from './page.css';
 
 export default function Home() {
-  return (
-    <div>
-      <Layer7Symbol size={100} />
-    </div>
-  );
+  return <div className={s.base}></div>;
 }

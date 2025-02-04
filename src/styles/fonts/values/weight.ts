@@ -1,3 +1,5 @@
+export type WeightKeys = keyof typeof weight;
+
 export const weight = {
   extrabold: '800',
   bold: '700',
@@ -5,4 +7,4 @@ export const weight = {
   medium: '500',
   regular: '400',
   light: '300',
-};
+} as const;
