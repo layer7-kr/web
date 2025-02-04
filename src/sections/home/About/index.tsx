@@ -1,5 +1,5 @@
 import Typo from "@/components/Typo";
-import * as s from "./styles.css";
+import * as s from "./style.css";
 import { weight } from "@/styles/fonts/values/weight";
 
 export default function HomeAboutSection() {
