@@ -6,9 +6,8 @@ export const base = style({
 
     margin: '0 auto',
     padding: '50px 0',
-
-
-    ...flexBetween({})
+    
+    ...flexBetween()
 })
 
 export const contactList = style({
