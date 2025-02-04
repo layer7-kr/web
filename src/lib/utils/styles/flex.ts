@@ -42,14 +42,14 @@ export const flexColumn = (options?: Omit<FlexOptions, 'direction'>) =>
 
 export const flexCenter = (options?: Partial<FlexOptions>) =>
   createFlex({
-    ...options,
     justify: 'center',
     align: 'center',
+    ...options,
   });
 
 export const flexBetween = (options?: Partial<FlexOptions>) =>
   createFlex({
-    ...options,
     justify: 'space-between',
     align: 'center',
+    ...options,
   });
