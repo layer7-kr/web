@@ -8,7 +8,6 @@ interface TypoProps {
   color?: string;
   className?: string;
   children: React.ReactNode;
-  lineHeight?: number;
 }
 
 export default function Typo(props: TypoProps) {
@@ -16,7 +15,6 @@ export default function Typo(props: TypoProps) {
     as = 'p',
     family,
     weight,
-    lineHeight,
     size,
     color = '#000',
     className,
@@ -32,7 +30,6 @@ export default function Typo(props: TypoProps) {
         fontFamily: family,
         fontWeight: weight,
         fontSize: size,
-        lineHeight: lineHeight || undefined,
         color,
         letterSpacing: '-1px'
       }}>
