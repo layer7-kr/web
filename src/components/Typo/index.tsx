@@ -31,7 +31,7 @@ export default function Typo(props: TypoProps) {
         fontWeight: weight,
         fontSize: size,
         color,
-        letterSpacing: '-1px'
+        letterSpacing: '-0.5px'
       }}>
       {children}
     </Element>
