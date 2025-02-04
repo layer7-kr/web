@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import HomeAboutSection from '@/sections/home/About';
+import HomeContactSection from '@/sections/home/Contact';
 import HomeHeroSection from '@/sections/home/Hero';
 import HomeStatsSection from '@/sections/home/Stats';
 import * as s from './page.css';
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeHeroSection />
       <HomeAboutSection />
       <HomeStatsSection />
+      <HomeContactSection />
       <Footer />
     </div>
   );
