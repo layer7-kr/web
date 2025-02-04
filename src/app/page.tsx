@@ -4,6 +4,7 @@ import HomeContactSection from '@/sections/home/Contact';
 import HomeHeroSection from '@/sections/home/Hero';
 import HomeStatsSection from '@/sections/home/Stats';
 import * as s from './page.css';
+import HomeActivitySection from '@/sections/home/Activity';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HomeAboutSection />
       <HomeStatsSection />
       <HomeContactSection />
+      <HomeActivitySection />
       <Footer />
     </div>
   );
