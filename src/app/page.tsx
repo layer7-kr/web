@@ -14,8 +14,8 @@ export default function Home() {
       <HomeAboutSection />
       <HomeSkillsSection />
       <HomeStatsSection />
-      <HomeContactSection />
       <HomeActivitySection />
+      <HomeContactSection />
       <Footer />
     </div>
   );
