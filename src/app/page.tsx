@@ -1,3 +1,4 @@
+import Accordion from '@/components/Accordion';
 import Footer from '@/components/Footer';
 import HomeAboutSection from '@/sections/home/About';
 import HomeContactSection from '@/sections/home/Contact';
@@ -14,6 +15,12 @@ export default function Home() {
       <HomeSkillsSection />
       <HomeStatsSection />
       <HomeContactSection />
+      <div
+        style={{
+          width: 800,
+        }}>
+        <Accordion title='Accordion'>Hello</Accordion>
+      </div>
       <Footer />
     </div>
   );
