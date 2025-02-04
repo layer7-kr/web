@@ -3,7 +3,7 @@ import { weight } from "@/styles/fonts/values/weight";
 
 import * as s from "./style.css";
 import ActivityItem from "./ActivityItem";
-import ActivityItemList from "./ActivityListItem";
+import ActivityItemList from "./ActivityItemList";
 
 export default function HomeActivitySection() {
   return (
