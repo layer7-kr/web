@@ -4,6 +4,9 @@ import { weight } from "@/styles/fonts/values/weight";
 import StatsItem from "./StatsItem";
 import StatsDetailItem from "./StatsDetail";
 
+import Layer7Info from '@/data/_info.json';
+import { getYearsFromNow } from "@/lib/utils/time";
+
 export default function HomeStatsSection() {
   return (
     <section className={s.base}>
@@ -17,16 +20,16 @@ export default function HomeStatsSection() {
           </Typo>
         </div>
         <div className={s.statsItemContainer}>
-          <StatsItem name="총 방문자 수" value={24} prefix="년" />
-          <StatsItem name="총 수상" value={577} prefix="개" />
-          <StatsItem name="함께 한 부원" value={281} prefix="명" />
+          <StatsItem name="탄생 연도" value={Layer7Info.startedYear} prefix="년" />
+          <StatsItem name="총 수상" value={Layer7Info.totalAwards} prefix="개" />
+          <StatsItem name="함께 한 부원" value={Layer7Info.totalMembers} prefix="명" />
         </div>
       </div>
       <div className={s.statsDetailContainer}>
-        <StatsDetailItem title="동아리 역사" content="Layer7은 nnnn년도부터 시작된 동아리로,
-24년의 역사를 가지고 있으며" />
-        <StatsDetailItem title="동아리 총 수상" content="577개의 수상실적을 이루어냈으며," />
-        <StatsDetailItem title="함께 한 부원" content="281명의 부원과 함께했습니다" />
+        <StatsDetailItem title="동아리 역사" content={`Layer7은 ${Layer7Info.startedYear}년도부터 시작된 동아리로,
+${getYearsFromNow(Layer7Info.startedYear)}년의 역사를 가지고 있으며`} />
+        <StatsDetailItem title="동아리 총 수상" content={`${Layer7Info.totalAwards}개의 수상실적을 이루어냈으며,`} />
+        <StatsDetailItem title="함께 한 부원" content={`${Layer7Info.totalAwards}명의 부원과 함께했습니다`} />
       </div>
     </section>
   );
