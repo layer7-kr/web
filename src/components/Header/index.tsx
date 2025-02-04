@@ -9,7 +9,7 @@ import { IconName } from '../Icon/icon-set';
 import Layer7Symbol from '../Layer7Symbol';
 import Typo from '../Typo';
 import HeaderItem from './HeaderItem';
-import * as s from './styles.css';
+import * as s from './style.css';
 
 interface HeaderProps {
   className?: string;

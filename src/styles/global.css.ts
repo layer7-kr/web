@@ -1,4 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
+import './fonts/index.css';
 import { pretendard } from './fonts/index.css';
 import './reset.css';
 
@@ -13,5 +14,5 @@ globalStyle('*', {
   color: '#000',
   lineHeight: 1.5,
   fontWeight: 400,
-  letterSpacing: '-0.02',
+  letterSpacing: -0.02,
 });
