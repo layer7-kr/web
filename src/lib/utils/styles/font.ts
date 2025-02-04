@@ -5,11 +5,11 @@ export const applyGlobalFontFace = (fontFamily: string, extension: string) => {
   globalFontFace(
     fontFamily,
     Object.entries(weight).map(([name, weight]) => ({
-      src: `url(${
-        process.env.NEXT_PUBLIC_URL || ''
-      }/fonts/${fontFamily}-${capitalizeFirstLetter(
+      src: `url(/assets/fonts/${fontFamily}/${fontFamily}-${capitalizeFirstLetter(
         name,
-      )}.woff2) format('${extension}')`,
+      )}.${extension}) format('${
+        extension === 'ttf' ? 'truetype' : extension
+      }')`,
       fontWeight: weight,
       fontDisplay: 'block',
     })),
