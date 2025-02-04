@@ -1,11 +1,11 @@
 import Typo from "@/components/Typo";
-import * as s from "./styles.css";
+import * as s from "./style.css";
 import { weight } from "@/styles/fonts/values/weight";
 
 export default function HomeAboutSection() {
   return (
     <section className={s.base}>
-      <section className={s.topSection}>
+      <div className={s.topSection}>
         <article className={s.visionSection}>
           <div className={s.visionTitle}>
             <Typo size={28} weight={weight.medium} color={"#000"} as="h2">
@@ -37,9 +37,9 @@ export default function HomeAboutSection() {
             동아리원들의 열정, 책임감은 24년이라는 역사를 뒷받침해왔습니다.
           </Typo>
         </article>
-      </section>
+      </div>
       <hr className={s.divider} />
-      <section className={s.nowSection}>
+      <div className={s.nowSection}>
         <Typo size={46} weight={weight.bold} color={"#000"}>
           NOW
         </Typo>
@@ -48,7 +48,7 @@ export default function HomeAboutSection() {
           <b>국제 해킹 컨퍼런스 코드게이트</b> 등에서 준비한 프로젝트를 발표하며
           시스템, 웹, 임베디드에 아우른 분야에서 실적을 내고 있습니다.
         </Typo>
-      </section>
+      </div>
     </section>
   );
 }
