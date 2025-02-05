@@ -13,3 +13,13 @@ export type JSONContactInfoData = {
   name: string;
   [key: string]: string;
 };
+
+export type JSONAwardsData = {
+  year: number;
+  items: string[];
+};
+
+export type JSONFAQData = {
+  question: string;
+  answer: string;
+};
