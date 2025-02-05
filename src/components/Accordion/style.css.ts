@@ -2,6 +2,7 @@ import { flexBetween } from '@/lib/utils/styles/flex';
 import { style } from '@vanilla-extract/css';
 
 export const base = style({
+  width: '100%',
   padding: 16,
   borderRadius: 4,
   cursor: 'pointer',

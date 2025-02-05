@@ -11,11 +11,12 @@ import * as s from './style.css';
 
 interface AccordionProps {
   title: string;
+  className?: string;
   children: React.ReactNode;
 }
 
 export default function Accordion(props: AccordionProps) {
-  const { title, children } = props;
+  const { title, className, children } = props;
 
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -36,7 +37,7 @@ export default function Accordion(props: AccordionProps) {
 
   return (
     <div
-      className={cn(s.base, isOpen && s.active)}
+      className={cn(s.base, isOpen && s.active, className)}
       onClick={() => setIsOpen(!isOpen)}>
       <motion.div
         style={{
