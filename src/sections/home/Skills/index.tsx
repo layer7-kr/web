@@ -2,6 +2,7 @@ import Typo from "@/components/Typo";
 import { weight } from "@/styles/fonts/values/weight";
 import * as s from "./style.css";
 import Curriculum from "./Curriculum";
+import CurriculumItemList from "./CurriculumList";
 
 export default function HomeSkillsSection() {
   return (
@@ -35,23 +36,7 @@ export default function HomeSkillsSection() {
           커리큘럼
         </Typo>
         <div>
-          <Curriculum
-            name="1. 프로그래밍"
-            description="IT 기술 전반의 기초가 되는 프로그래밍 수업을 진행합니다. 프로그래밍교육을 통해 IT 기본 소양을 기릅니다."
-            located="first"
-          />
-          <Curriculum.Line />
-          <Curriculum
-            name="1. 프로그래밍"
-            description="IT 기술 전반의 기초가 되는 프로그래밍 수업을 진행합니다. 프로그래밍교육을 통해 IT 기본 소양을 기릅니다."
-            located="middle"
-          />
-          <Curriculum.Line />
-          <Curriculum
-            name="1. 프로그래밍"
-            description="IT 기술 전반의 기초가 되는 프로그래밍 수업을 진행합니다. 프로그래밍교육을 통해 IT 기본 소양을 기릅니다."
-            located="last"
-          />
+          <CurriculumItemList />
         </div>
       </div>
     </section>

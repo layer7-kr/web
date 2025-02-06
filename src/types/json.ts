@@ -23,3 +23,8 @@ export type JSONFAQData = {
   question: string;
   answer: string;
 };
+
+export type JSONCurriculumData = {
+  name: string;
+  description: string;
+}
