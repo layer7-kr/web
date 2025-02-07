@@ -10,7 +10,10 @@ export default async function HomeFAQSection() {
 
   return (
     <section className={s.base}>
-      <Typo as={'h2'} weight={weight.semibold} size={28}>
+      <Typo as={'h2'} weight={weight.semibold} size={{
+        1032: 24,
+        default: 28
+        }}>
         자주 묻는 질문
       </Typo>
       <HomeFAQAccordion data={data} />
