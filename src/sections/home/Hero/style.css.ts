@@ -21,7 +21,7 @@ export const container = style({
 export const branding = style({
   ...flexColumn({
     align: 'center',
-    gap: 4,
+    gap: 20,
   }),
 });
 

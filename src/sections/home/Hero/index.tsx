@@ -11,27 +11,29 @@ export default function HomeHeroSection() {
     <section className={s.base}>
       <div className={s.container}>
         <div className={s.branding}>
-          <Layer7Symbol size={136} />
+          <Layer7Symbol size={100} />
           <div className={s.info}>
             <div className={s.title}>
               <Typo
                 family={lexendMega}
-                size={76}
+                size={82}
                 weight={weight.black}
                 className={s.titleLine}
+                letterSpacing='-10px'
                 color={'#047ee9'}>
                 we hack the
               </Typo>
               <Typo
                 family={lexendMega}
-                size={76}
+                size={82}
                 weight={weight.black}
                 className={s.titleLine}
+                letterSpacing='-10px'
                 color={'#fff'}>
                 universe
               </Typo>
             </div>
-            <Typo size={18} weight={weight.extrabold} color={'#fff'}>
+            <Typo size={18} weight={weight.semibold} color={'#fff'}>
               선린인터넷고등학교 해킹 전문 동아리 Layer7
             </Typo>
           </div>
