@@ -10,11 +10,17 @@ export const base = style({
   "@media": {
     "(max-width: 1000px)": {
       ...flexColumn({
-        gap: 40,
+        gap: 30,
       }),
     },
   },
 });
+
+export const titleContainer = style({
+  ...flexColumn({
+    gap: 8,
+  }),
+})
 
 export const items = style({
   width: 800,
