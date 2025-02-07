@@ -5,6 +5,12 @@ export const base = style({
   width: '100%',
   height: 320,
   overflow: 'hidden',
+
+  '@media': {
+        '(max-width: 550px)': {
+            height: 240,
+        }
+    }
 });
 
 export const backgroundImage = style({
