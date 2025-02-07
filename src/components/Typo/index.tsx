@@ -1,22 +1,21 @@
-import { weight, WeightKeys } from '@/styles/fonts/values/weight';
+'use client'
 
-// 레이아웃 사이즈 정의ㅇㅇ
-type ResponsiveSize = {
-  base: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
+import React, { useEffect, useState, useCallback } from 'react';
+
+type ResponsiveValue = {
+  [key: number | string]: string | number;
 };
+
+type StyleValue = string | number | ResponsiveValue;
 
 interface TypoProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
   family?: string;
-  weight?: (typeof weight)[WeightKeys];
-  size: number | ResponsiveSize;
-  color?: string;
+  weight?: StyleValue;
+  size: StyleValue;
+  color?: StyleValue;
+  letterSpacing?: StyleValue;
   className?: string;
-  letterSpacing?: string;
   children: React.ReactNode;
 }
 
@@ -24,7 +23,7 @@ export default function Typo(props: TypoProps) {
   const {
     as = 'p',
     family,
-    weight,
+    weight = 'medium',
     size,
     color = '#000',
     className,
@@ -33,44 +32,76 @@ export default function Typo(props: TypoProps) {
   } = props;
 
   const Element = as;
+  const [currentStyles, setCurrentStyles] = useState({});
 
-  const generateResponsiveStyles = () => {
-    if (typeof size === 'number') {
-      return { fontSize: size };
+  const calculateStylesForBreakpoint = useCallback((value: StyleValue, property: string) => {
+    if (typeof value !== 'object') {
+      return { [property]: value };
     }
 
-    const mediaQueries = `
-      font-size: ${size.base}px;
-      
-      @media (min-width: 640px) {
-        font-size: ${size.sm ?? size.base}px;
-      }
-      @media (min-width: 768px) {
-        font-size: ${size.md ?? size.sm ?? size.base}px;
-      }
-      @media (min-width: 1024px) {
-        font-size: ${size.lg ?? size.md ?? size.sm ?? size.base}px;
-      }
-      @media (min-width: 1280px) {
-        font-size: ${size.xl ?? size.lg ?? size.md ?? size.sm ?? size.base}px;
-      }
-    `;
+    // Convert breakpoints to number array and sort them in ascending order
+    const breakpoints = Object.entries(value)
+      .map(([breakpoint, value]) => ({
+        breakpoint: breakpoint === 'default' ? Infinity : Number(breakpoint),
+        value
+      }))
+      .sort((a, b) => a.breakpoint - b.breakpoint);
 
-    return { fontSize: size.base, cssText: mediaQueries };
-  };
+    const currentWidth = window.innerWidth;
+    
+    // Find the smallest breakpoint (excluding default)
+    const smallestBreakpoint = breakpoints.find(bp => bp.breakpoint !== Infinity);
+    
+    // If current width is smaller than or equal to the smallest breakpoint,
+    // use that breakpoint's value directly
+    if (smallestBreakpoint && currentWidth <= smallestBreakpoint.breakpoint) {
+      return { [property]: smallestBreakpoint.value };
+    }
 
-  const styles = generateResponsiveStyles();
+    // For larger widths, find the appropriate breakpoint
+    for (let i = breakpoints.length - 1; i >= 0; i--) {
+      if (currentWidth > breakpoints[i].breakpoint) {
+        return { [property]: breakpoints[i + 1]?.value || breakpoints[i].value };
+      }
+    }
+
+    // If no breakpoint matches, use the default value
+    const defaultBreakpoint = breakpoints.find(bp => bp.breakpoint === Infinity);
+    return { [property]: defaultBreakpoint?.value || breakpoints[0].value };
+  }, []);
+
+  const updateStyles = useCallback(() => {
+    const newStyles = {
+      fontFamily: family,
+      ...calculateStylesForBreakpoint(size, 'fontSize'),
+      ...calculateStylesForBreakpoint(weight, 'fontWeight'),
+      ...calculateStylesForBreakpoint(color, 'color'),
+      ...calculateStylesForBreakpoint(letterSpacing, 'letterSpacing'),
+    };
+    setCurrentStyles(newStyles);
+  }, [size, weight, color, letterSpacing, family, calculateStylesForBreakpoint]);
+
+  useEffect(() => {
+    // Initial style calculation
+    updateStyles();
+
+    // Add resize event listener
+    const handleResize = () => {
+      updateStyles();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [updateStyles]);
 
   return (
     <Element
       className={className}
-      style={{
-        fontFamily: family,
-        fontWeight: weight,
-        color,
-        letterSpacing,
-        ...styles,
-      }}>
+      style={currentStyles}>
       {children}
     </Element>
   );

@@ -5,6 +5,7 @@ import Typo from '@/components/Typo';
 import { lexendMega } from '@/styles/fonts/index.css';
 import { weight } from '@/styles/fonts/values/weight';
 import * as s from './style.css';
+import { HeroDescription, HeroTitle } from './shared';
 
 export default function HomeHeroSection() {
   return (
@@ -14,28 +15,12 @@ export default function HomeHeroSection() {
           <Layer7Symbol size={100} />
           <div className={s.info}>
             <div className={s.title}>
-              <Typo
-                family={lexendMega}
-                size={82}
-                weight={weight.black}
-                className={s.titleLine}
-                letterSpacing='-10px'
-                color={'#047ee9'}>
-                we hack the
-              </Typo>
-              <Typo
-                family={lexendMega}
-                size={82}
-                weight={weight.black}
-                className={s.titleLine}
-                letterSpacing='-10px'
-                color={'#fff'}>
-                universe
-              </Typo>
+              <HeroTitle color={'#047ee9'}>we hack the</HeroTitle>
+              <HeroTitle>universe</HeroTitle>
             </div>
-            <Typo size={18} weight={weight.semibold} color={'#fff'}>
+            <HeroDescription>
               선린인터넷고등학교 해킹 전문 동아리 Layer7
-            </Typo>
+            </HeroDescription>
           </div>
         </div>
         <button className={s.apply}>
