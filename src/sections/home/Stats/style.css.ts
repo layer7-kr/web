@@ -6,6 +6,7 @@ export const base = style({
     maxWidth: 1000,
 
     margin: '0 auto',
+    padding: '20px 0',
 
     ...flexBetween({
         gap: 32

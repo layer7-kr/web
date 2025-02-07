@@ -5,12 +5,14 @@ import { weight } from "@/styles/fonts/values/weight";
 interface CurriculumProps {
   name: string;
   description: string;
+  index: number;
   located: "first" | "last" | "middle";
 }
 
 export default function Curriculum({
   name,
   description,
+  index,
   located,
 }: CurriculumProps) {
   return (
@@ -20,11 +22,11 @@ export default function Curriculum({
         <div className={s.line} data-located={located} />
       </div>
       <div className={s.contentContainer}>
-        <Typo as="h3" size={22} weight={weight.medium} color="#212E38">
-          {name}
+        <Typo as="h3" size={18} weight={weight.medium} color="#212E38">
+          {index}. {name}
         </Typo>
         <Typo
-          size={16}
+          size={13}
           weight={weight.regular}
           color="#666666"
           className={s.description}

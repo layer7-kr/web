@@ -2,7 +2,6 @@ import Typo from "@/components/Typo";
 import { weight } from "@/styles/fonts/values/weight";
 
 import * as s from "./style.css";
-import ActivityItem from "./ActivityItem";
 import ActivityItemList from "./ActivityItemList";
 
 export default function HomeActivitySection() {

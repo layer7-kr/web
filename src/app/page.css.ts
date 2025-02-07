@@ -14,3 +14,11 @@ export const accordion = style({
   }),
   paddingBlock: 64,
 });
+
+export const details = style({
+  width: '100%',
+  
+  ...flexColumn({
+    gap: 90,
+  }),
+})

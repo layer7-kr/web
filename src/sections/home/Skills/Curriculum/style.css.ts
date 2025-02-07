@@ -3,7 +3,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 
 export const base = style({
     ...flexRow({
-        gap: 34
+        gap: 28
     })
 })
 
@@ -14,7 +14,7 @@ export const contentContainer = style({
 })
 
 export const description = style({
-    width: 400
+    width: 300
 })
 
 export const timeline = style({
@@ -31,7 +31,7 @@ export const timeline = style({
 })
 
 export const line = style({
-    width: 2.5,
+    width: 2,
     height: '100%',
     
     backgroundColor: "#047EE9",
@@ -58,14 +58,14 @@ export const line = style({
 export const circle = style({
     width: 15,
     aspectRatio: "1/1",
-    border: "3px solid #047EE9",
+    border: "2px solid #047EE9",
     backgroundColor: "#fff",
     borderRadius: "50%",
 
     selectors: {
         '&[data-located="middle"], &[data-located="last"]': {
             position: "relative",
-            bottom: -8,
+            bottom: -5,
             zIndex: 1
         }
     }
