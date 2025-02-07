@@ -7,6 +7,8 @@ import { lexendMega } from "@/styles/fonts/index.css";
 import * as s from "./style.css";
 
 import { PropsWithChildren } from "react";
+import { IconName } from '@/components/Icon/icon-set';
+import Icon from "@/components/Icon";
 
 interface HeroTitleProps {
   children: React.ReactNode;
@@ -44,3 +46,17 @@ export const HeroDescription = ({ children }: PropsWithChildren) => {
     </Typo>
   );
 };
+
+export const ApplyButton = ({ children }: PropsWithChildren) => {
+  return (
+    <div className={s.apply}>
+      <Typo size={{
+        768: 15,
+        default: 18,
+      }} weight={weight.semibold} color={"#ffffff"}>
+        {children}
+      </Typo>
+      <Icon name={IconName.ARROW_FORWARD} size={18} color={"#ffffff"} />
+    </div>
+  );
+}
