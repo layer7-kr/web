@@ -8,24 +8,68 @@ export default function HomeAboutSection() {
       <div className={s.topSection}>
         <article className={s.visionSection}>
           <div className={s.visionTitle}>
-            <Typo size={28} weight={weight.medium} color={"#000"} as="h2">
+            <Typo
+              size={{
+                600: 24,
+                1000: 28,
+                1175: 18,
+                1330: 22,
+                default: 28,
+              }}
+              weight={weight.medium}
+              color={"#000"}
+              as="h2"
+            >
               VISION
             </Typo>
-            <Typo size={52} weight={weight.semibold} color={"#000"} as="h3">
+            <Typo
+              size={{
+                600: 36,
+                1000: 46,
+                1175: 32,
+                1330: 40,
+                default: 52,
+              }}
+              weight={weight.semibold}
+              color={"#000"}
+              as="h3"
+            >
               열정, 책임감, 친근함
             </Typo>
           </div>
-          <Typo size={24} weight={weight.regular} color={"#000"}>
+          <Typo
+            size={{
+              600: 18,
+              1000: 26,
+              1330: 18,
+              default: 24,
+            }}
+            weight={weight.regular}
+            color={"#000"}
+          >
             공부 하고자 하는 열정, 보안인으로써의 책임감, <br />
             학교 선후배로써의 친근함은 동아리의 지향점입니다.
           </Typo>
         </article>
         <article className={s.historySection}>
-          <Typo size={42} weight={weight.bold} color={"#000"}>
+          <Typo
+            size={{ 
+              600: 24,
+              1175: 28,
+              1330: 32, default: 42 
+            }}
+            weight={weight.bold}
+            color={"#000"}
+          >
             HOW WE STARTED IT
           </Typo>
           <Typo
-            size={24}
+            size={{ 
+              600: 18,
+              1175: 22,
+              1330: 20,
+              default: 24 
+            }}
             weight={weight.regular}
             color={"#808080"}
             className={s.historyContent}
@@ -40,11 +84,29 @@ export default function HomeAboutSection() {
       </div>
       <hr className={s.divider} />
       <div className={s.nowSection}>
-        <Typo size={46} weight={weight.bold} color={"#000"}>
+        <Typo size={{
+          600: 28,
+          1000: 36,
+          1175: 28,
+          1330: 36,
+          default: 46
+        }} weight={weight.bold} color={"#000"}>
           NOW
         </Typo>
-        <Typo size={24} weight={weight.regular} color={"#808080"} className={s.nowContent}>
-          세계 해커들의 올림픽이라는 <b>데프콘</b>, <b>WITHCON</b>등 유명 대회에서 수상하고,
+        <Typo
+          size={{
+            600: 18,
+            1000: 24,
+            1175: 18,
+            1330: 20,
+            default: 24
+          }}
+          weight={weight.regular}
+          color={"#808080"}
+          className={s.nowContent}
+        >
+          세계 해커들의 올림픽이라는 <b>데프콘</b>, <b>WITHCON</b>등 유명
+          대회에서 수상하고,
           <b>국제 해킹 컨퍼런스 코드게이트</b> 등에서 준비한 프로젝트를 발표하며
           시스템, 웹, 임베디드에 아우른 분야에서 실적을 내고 있습니다.
         </Typo>
