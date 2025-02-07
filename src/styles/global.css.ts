@@ -2,6 +2,7 @@ import { globalStyle } from '@vanilla-extract/css';
 import './fonts/index.css';
 import { pretendard } from './fonts/index.css';
 import './reset.css';
+import './theme.css';
 
 globalStyle('html, body', {
   margin: 0,
