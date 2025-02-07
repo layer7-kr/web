@@ -7,6 +7,7 @@ interface TypoProps {
   size: number;
   color?: string;
   className?: string;
+  letterSpacing?: string;
   children: React.ReactNode;
 }
 
@@ -18,6 +19,7 @@ export default function Typo(props: TypoProps) {
     size,
     color = '#000',
     className,
+    letterSpacing = '-0.5px',
     children,
   } = props;
 
@@ -31,7 +33,7 @@ export default function Typo(props: TypoProps) {
         fontWeight: weight,
         fontSize: size,
         color,
-        letterSpacing: '-0.5px'
+        letterSpacing,
       }}>
       {children}
     </Element>
