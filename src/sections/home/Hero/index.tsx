@@ -1,49 +1,24 @@
-import Icon from '@/components/Icon';
-import { IconName } from '@/components/Icon/icon-set';
 import Layer7Symbol from '@/components/Layer7Symbol';
-import Typo from '@/components/Typo';
-import { lexendMega } from '@/styles/fonts/index.css';
-import { weight } from '@/styles/fonts/values/weight';
 import * as s from './style.css';
+import { ApplyButton, HeroDescription, HeroTitle } from './shared';
 
 export default function HomeHeroSection() {
   return (
     <section className={s.base}>
       <div className={s.container}>
         <div className={s.branding}>
-          <Layer7Symbol size={100} />
+          <Layer7Symbol size={80} />
           <div className={s.info}>
             <div className={s.title}>
-              <Typo
-                family={lexendMega}
-                size={82}
-                weight={weight.black}
-                className={s.titleLine}
-                letterSpacing='-10px'
-                color={'#047ee9'}>
-                we hack the
-              </Typo>
-              <Typo
-                family={lexendMega}
-                size={82}
-                weight={weight.black}
-                className={s.titleLine}
-                letterSpacing='-10px'
-                color={'#fff'}>
-                universe
-              </Typo>
+              <HeroTitle color={'#047ee9'}>we hack the</HeroTitle>
+              <HeroTitle>universe</HeroTitle>
             </div>
-            <Typo size={18} weight={weight.semibold} color={'#fff'}>
+            <HeroDescription>
               선린인터넷고등학교 해킹 전문 동아리 Layer7
-            </Typo>
+            </HeroDescription>
           </div>
         </div>
-        <button className={s.apply}>
-          <Typo size={18} weight={weight.bold} color={'#fff'}>
-            동아리 지원하기
-          </Typo>
-          <Icon name={IconName.ARROW_FORWARD} size={20} color={'#fff'} />
-        </button>
+        <ApplyButton>지원하기</ApplyButton>
       </div>
     </section>
   );

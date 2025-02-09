@@ -10,7 +10,14 @@ export const base = style({
     ...flexCenter({
         direction: 'column',
         gap: 65,
-    })
+    }),
+
+    '@media': {
+        '(max-width: 550px)': {
+            padding: '30px 0',
+            gap: 40,
+        }
+    }
 })
 
 export const activityList = style({

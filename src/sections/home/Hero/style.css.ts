@@ -63,4 +63,9 @@ export const apply = style({
   ':active': {
     background: 'rgba(255, 255, 255, 0.3)',
   },
+  '@media': {
+    '(max-width: 768px)': {
+      padding: '12px 24px',
+    }
+  }
 });

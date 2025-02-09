@@ -30,7 +30,7 @@ export default function Home() {
           width: 800,
         }}
       >
-        <Accordion title="Accordion">Hello</Accordion>
+        {/* <Accordion title="Accordion">Hello</Accordion> */}
       </div>
       <Footer />
     </div>
