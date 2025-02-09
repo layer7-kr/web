@@ -4,7 +4,7 @@ interface TypoProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
   family?: string;
   weight?: (typeof weight)[WeightKeys];
-  size: number;
+  size?: number;
   color?: string;
   className?: string;
   letterSpacing?: string;
