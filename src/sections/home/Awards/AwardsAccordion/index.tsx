@@ -5,7 +5,7 @@ import Typo from '@/components/Typo';
 import { weight } from '@/styles/fonts/values/weight';
 import { colorVars } from '@/styles/theme.css';
 import { JSONAwardsData } from '@/types/json';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import * as s from '../style.css';
 
 interface HomeAwardsAccordionProps {
@@ -28,16 +28,8 @@ export default function HomeAwardsAccordion(props: HomeAwardsAccordionProps) {
           <Accordion
             key={index}
             title={item.year.toString()}
-            className={s.awardItem}>
-            <Typo as={'span'} size={14} color={colorVars._55}>
-              {item.items.map((award, index) => (
-                <React.Fragment key={index}>
-                  {award}
-                  {index < item.items.length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </Typo>
-          </Accordion>
+            content={item.items.join('\n')}
+          />
         ))}
       </div>
       {!showAll && (

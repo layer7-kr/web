@@ -1,5 +1,4 @@
 import { flexBetween, flexColumn } from '@/lib/utils/styles/flex';
-import { colorVars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const base = style({
@@ -35,9 +34,4 @@ export const items = style({
       width: '100%',
     },
   },
-});
-
-export const awardItem = style({
-  background: colorVars.arcBlack,
-  border: `1px solid ${colorVars._10}`,
 });

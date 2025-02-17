@@ -56,8 +56,3 @@ export const more = style({
     opacity: 0.6,
   },
 });
-
-export const awardItem = style({
-  background: colorVars.arcBlack,
-  border: `1px solid ${colorVars._10}`,
-});

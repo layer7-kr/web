@@ -7,6 +7,8 @@ export const base = style({
   padding: 16,
   borderRadius: 4,
   cursor: 'pointer',
+  background: colorVars.arcBlack,
+  border: `1px solid ${colorVars._10}`,
 });
 
 export const active = style({

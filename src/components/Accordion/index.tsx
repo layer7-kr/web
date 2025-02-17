@@ -4,7 +4,7 @@ import { weight } from '@/styles/fonts/values/weight';
 import { colorVars } from '@/styles/theme.css';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Icon from '../Icon';
 import { IconName } from '../Icon/icon-set';
 import Typo from '../Typo';
@@ -13,11 +13,11 @@ import * as s from './style.css';
 interface AccordionProps {
   title: string;
   className?: string;
-  children: React.ReactNode;
+  content: string;
 }
 
 export default function Accordion(props: AccordionProps) {
-  const { title, className, children } = props;
+  const { title, className, content } = props;
 
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -80,7 +80,14 @@ export default function Accordion(props: AccordionProps) {
             delay: isOpen ? 0.05 : 0,
             ease: 'easeInOut',
           }}>
-          {children}
+          <Typo as={'span'} size={14} color={colorVars._55}>
+            {content.split('\n').map((item, index) => (
+              <React.Fragment key={index}>
+                {item}
+                {index < content.split('\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </Typo>
         </motion.div>
       </motion.div>
     </div>
