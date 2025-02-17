@@ -25,7 +25,7 @@ export default function Typo(props: TypoProps) {
     family,
     weight = 'medium',
     size,
-    color = '#000',
+    color = '#212E38',
     className,
     letterSpacing = '-0.5px',
     children,
