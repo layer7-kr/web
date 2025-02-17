@@ -5,6 +5,12 @@ export const base = style({
   width: '100%',
   paddingBlock: 20,
   ...flexCenter(),
+  zIndex: 100,
+  transition: 'background 0.3s',
+});
+
+export const background = style({
+  background: '#0E0F10',
 });
 
 export const container = style({

@@ -4,6 +4,7 @@ import { weight } from '@/styles/fonts/values/weight';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import { IconName } from '../Icon/icon-set';
 import Layer7Symbol from '../Layer7Symbol';
@@ -20,6 +21,7 @@ export default function Header(props: HeaderProps) {
 
   const { theme, setTheme } = useTheme();
 
+  const [scrollY, setScrollY] = useState(0);
   const router = useRouter();
 
   const handleClickLogo = () => {
@@ -30,8 +32,20 @@ export default function Header(props: HeaderProps) {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+
+  const hasBackground = scrollY > 300;
+
   return (
-    <header className={cn(s.base, className)}>
+    <header className={cn(s.base, hasBackground && s.background, className)}>
       <div className={s.container}>
         <Layer7Symbol size={30} onClick={handleClickLogo} />
         <div className={s.leading}>
