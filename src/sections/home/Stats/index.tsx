@@ -66,7 +66,7 @@ ${getYearsFromNow(Layer7Info.startedYear)}년의 역사를 가지고 있으며`}
         />
         <StatsDetailItem
           title='함께 한 부원'
-          content={`${Layer7Info.totalAwards}명의 부원과 함께했습니다`}
+          content={`${Layer7Info.totalMembers}명의 부원과 함께했습니다`}
         />
       </div>
     </section>
