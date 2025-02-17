@@ -7,14 +7,17 @@ import { getJSON } from "@/lib/json";
 
 export default async function HomeContactSection() {
   const ContactInfo = await getJSON<JSONContactInfoData[]>("_contact.json");
+
+  const TitleSize = {
+    750: 24,
+    default: 28,
+  }
+
   return (
     <section className={s.base}>
       <Typo
         as="h2"
-        size={{
-          750: 24,
-          default: 28,
-        }}
+        size={TitleSize}
         weight={weight.semibold}
         color="#212E38"
       >
