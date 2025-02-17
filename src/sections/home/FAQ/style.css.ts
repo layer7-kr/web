@@ -23,7 +23,7 @@ export const titleContainer = style({
 });
 
 export const items = style({
-  width: 750,
+  width: 800,
   ...flexColumn({
     align: 'center',
     gap: 8,

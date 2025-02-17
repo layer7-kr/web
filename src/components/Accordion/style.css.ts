@@ -19,6 +19,10 @@ export const title = style({
   userSelect: 'none',
 });
 
+export const content = style({
+  cursor: 'text',
+});
+
 export const label = style({
   width: '100%',
   ...flexBetween(),
