@@ -4,11 +4,15 @@ import { style } from '@vanilla-extract/css';
 export const base = style({
   width: '100%',
   height: '100vh',
-  background: 'rgba(0, 0, 0, 0.7)',
-  backgroundImage: 'url(/assets/background.png)',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  position: 'relative',
   ...flexCenter(),
+});
+
+export const image = style({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  zIndex: -1,
 });
 
 export const container = style({
@@ -66,6 +70,6 @@ export const apply = style({
   '@media': {
     '(max-width: 768px)': {
       padding: '12px 24px',
-    }
-  }
+    },
+  },
 });

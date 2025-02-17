@@ -2,12 +2,21 @@
 
 import Layer7Symbol from '@/components/Layer7Symbol';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ApplyButton, HeroDescription, HeroTitle } from './shared';
 import * as s from './style.css';
 
 export default function HomeHeroSection() {
   return (
     <section className={s.base}>
+      <Image
+        src='/assets/background.png'
+        alt='Layer7'
+        layout='fill'
+        objectFit='cover'
+        quality={100}
+        className={s.image}
+      />
       <div className={s.container}>
         <motion.div
           initial={{ opacity: 0 }}
