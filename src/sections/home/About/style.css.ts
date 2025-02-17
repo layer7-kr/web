@@ -77,7 +77,7 @@ export const visionTitle = style({
 });
 
 export const historySection = style({
-  padding: "0 20px",
+  paddingInline: 30,
 
   ...flexColumn({
     gap: 19,
@@ -85,7 +85,7 @@ export const historySection = style({
 
   "@media": {
     "(max-width: 1024px)": {
-      padding: "0",
+      padding: 0,
     },
   },
 });

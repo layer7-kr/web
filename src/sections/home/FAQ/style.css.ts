@@ -2,7 +2,7 @@ import { flexBetween, flexColumn } from "@/lib/utils/styles/flex";
 import { style } from "@vanilla-extract/css";
 
 export const base = style({
-  padding: "0 30px",
+  paddingInline: 30,
   width: "min(100%, 1200px)",
 
   ...flexBetween({ align: "flex-start" }),

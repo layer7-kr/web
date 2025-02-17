@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 
 export const base = style({
   width: '100%',
-  padding: '0 30px',
+  paddingInline: 30,
   ...flexCenter({
     align: 'flex-start',
     gap: 10,
