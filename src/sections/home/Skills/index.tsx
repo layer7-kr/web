@@ -3,19 +3,13 @@ import { weight } from "@/styles/fonts/values/weight";
 import * as s from "./style.css";
 import Curriculum from "./Curriculum";
 import CurriculumItemList from "./CurriculumList";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function HomeSkillsSection() {
   return (
     <section className={s.base}>
       <div className={s.skills}>
-        <Typo
-          as="h2"
-          size={32}
-          weight={weight.bold}
-          className={s.title}
-        >
-          Skills
-        </Typo>
+        <SectionTitle>Skills</SectionTitle>
         <div className={s.skillTags}>
           <SkillTag name={"C언어 프로그래밍"} />
           <SkillTag name={"웹 해킹"} />
@@ -25,14 +19,7 @@ export default function HomeSkillsSection() {
         </div>
       </div>
       <div className={s.curriculum}>
-        <Typo
-          as="h2"
-          size={32}
-          weight={weight.bold}
-          className={s.title}
-        >
-          커리큘럼
-        </Typo>
+        <SectionTitle>커리큘럼</SectionTitle>
         <div>
           <CurriculumItemList />
         </div>

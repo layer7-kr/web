@@ -3,16 +3,25 @@ import { style } from '@vanilla-extract/css';
 
 export const base = style({
   width: '100%',
+  padding: '0 30px',
   ...flexCenter({
     align: 'flex-start',
     gap: 10,
   }),
+
+  '@media': {
+    '(max-width: 1024px)': {
+      ...flexColumn({
+        gap: 32,
+      })
+    }
+  }
 });
 
 export const skills = style({
   paddingBlock: 20,
   ...flexColumn({
-    gap: 32,
+    gap: 30,
   }),
 });
 
@@ -21,7 +30,6 @@ export const title = style({
 });
 
 export const skillTags = style({
-  width: 300,
   ...flexCenter({
     gap: 16,
     wrap: 'wrap',
@@ -45,6 +53,6 @@ export const skillTag = style({
 
 export const curriculum = style({
   ...flexColumn({
-    gap: 52,
+    gap: 30,
   }),
 });
