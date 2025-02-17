@@ -1,9 +1,6 @@
-import Typo from "@/components/Typo";
-import { weight } from "@/styles/fonts/values/weight";
-
-import * as s from "./style.css";
-import ActivityItemList from "./ActivityItemList";
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from '@/components/SectionTitle';
+import ActivityItemList from './ActivityItemList';
+import * as s from './style.css';
 
 export default function HomeActivitySection() {
   return (

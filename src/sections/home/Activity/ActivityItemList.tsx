@@ -1,8 +1,6 @@
-import { promises as fs } from "fs";
-import path from "path";
-import ActivityItem from "./ActivityItem";
-import { JSONActivityData } from "@/types/json";
-import { getJSON } from "@/lib/json";
+import { getJSON } from '@/lib/json';
+import { JSONActivityData } from '@/types/json';
+import ActivityItem from './ActivityItem';
 
 export default async function ActivityItemList() {
   const activities = await getJSON<JSONActivityData[]>('_activity.json');
@@ -14,7 +12,7 @@ export default async function ActivityItemList() {
         imageName={activity.imageName}
         name={activity.name}
       />
-    )
+    ),
   );
 
   return activityList;

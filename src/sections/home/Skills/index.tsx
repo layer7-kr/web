@@ -1,8 +1,9 @@
-import Typo from "@/components/Typo";
-import { weight } from "@/styles/fonts/values/weight";
-import * as s from "./style.css";
-import CurriculumItemList from "./CurriculumList";
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from '@/components/SectionTitle';
+import Typo from '@/components/Typo';
+import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
+import CurriculumItemList from './CurriculumList';
+import * as s from './style.css';
 
 export default function HomeSkillsSection() {
   return (
@@ -10,11 +11,11 @@ export default function HomeSkillsSection() {
       <div className={s.skills}>
         <SectionTitle>Skills</SectionTitle>
         <div className={s.skillTags}>
-          <SkillTag name={"C언어 프로그래밍"} />
-          <SkillTag name={"웹 해킹"} />
-          <SkillTag name={"프로젝트"} />
-          <SkillTag name={"시스템 해킹"} />
-          <SkillTag name={"리버스 엔지니어링"} />
+          <SkillTag name={'C언어 프로그래밍'} />
+          <SkillTag name={'웹 해킹'} />
+          <SkillTag name={'프로젝트'} />
+          <SkillTag name={'시스템 해킹'} />
+          <SkillTag name={'리버스 엔지니어링'} />
         </div>
       </div>
       <div className={s.curriculum}>
@@ -36,7 +37,7 @@ function SkillTag(props: SkillTagProps) {
 
   return (
     <button className={s.skillTag}>
-      <Typo size={16} weight={weight.regular}>
+      <Typo size={16} weight={weight.regular} color={colorVars.lowToneText}>
         {name}
       </Typo>
     </button>

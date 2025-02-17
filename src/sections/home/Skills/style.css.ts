@@ -1,4 +1,5 @@
 import { flexCenter, flexColumn } from '@/lib/utils/styles/flex';
+import { colorVars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const base = style({
@@ -13,9 +14,9 @@ export const base = style({
     '(max-width: 1024px)': {
       ...flexColumn({
         gap: 32,
-      })
-    }
-  }
+      }),
+    },
+  },
 });
 
 export const skills = style({
@@ -41,7 +42,7 @@ export const skillTags = style({
 export const skillTag = style({
   paddingBlock: 10,
   paddingInline: 12,
-  background: '#F5F6F6',
+  background: colorVars.lowTone,
   borderRadius: 4,
   transition: 'opacity 0.2s',
   ':hover': {

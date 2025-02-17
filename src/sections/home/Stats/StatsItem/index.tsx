@@ -1,6 +1,7 @@
-import Typo from "@/components/Typo";
-import * as s from "./style.css";
-import { weight } from "@/styles/fonts/values/weight";
+import Typo from '@/components/Typo';
+import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
+import * as s from './style.css';
 
 interface StatsItemProps {
   name: string;
@@ -12,13 +13,13 @@ export default function StatsItem({ name, value, prefix }: StatsItemProps) {
   return (
     <div className={s.base}>
       <Typo
-        as="h3"
+        as='h3'
         size={{
           640: 16,
           base: 20,
         }}
         weight={weight.medium}
-      >
+        color={colorVars._80}>
         {name}
       </Typo>
       <Typo
@@ -27,8 +28,7 @@ export default function StatsItem({ name, value, prefix }: StatsItemProps) {
           base: 38,
         }}
         weight={weight.bold}
-        color="#047EE9"
-      >
+        color={colorVars.point}>
         {value}
         {prefix}
       </Typo>

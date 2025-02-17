@@ -1,7 +1,8 @@
-import Typo from "@/components/Typo";
-import { weight } from "@/styles/fonts/values/weight";
-import * as s from "./style.css";
-import classNames from "classnames";
+import Typo from '@/components/Typo';
+import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
+import classNames from 'classnames';
+import * as s from './style.css';
 
 export const AboutVisionTextBreakpoints = {
   title: {
@@ -28,8 +29,7 @@ export function AboutArticleTitle({ children }: { children: React.ReactNode }) {
         default: 42,
       }}
       weight={weight.bold}
-      color={"#000"}
-    >
+      color={colorVars.normal}>
       {children}
     </Typo>
   );
@@ -37,10 +37,10 @@ export function AboutArticleTitle({ children }: { children: React.ReactNode }) {
 
 export function AboutArticleDescription({
   children,
-  textAlign = "center",
+  textAlign = 'center',
 }: {
   children: React.ReactNode;
-  textAlign?: "center" | "left";
+  textAlign?: 'center' | 'left';
 }) {
   return (
     <Typo
@@ -50,11 +50,10 @@ export function AboutArticleDescription({
         default: 24,
       }}
       weight={weight.regular}
-      color={"#808080"}
+      color={colorVars._80}
       className={classNames(s.nowContent, {
-        [s.textAlignLeft]: textAlign === "left",
-      })}
-    >
+        [s.textAlignLeft]: textAlign === 'left',
+      })}>
       {children}
     </Typo>
   );

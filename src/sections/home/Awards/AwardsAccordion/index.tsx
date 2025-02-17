@@ -3,6 +3,7 @@
 import Accordion from '@/components/Accordion';
 import Typo from '@/components/Typo';
 import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
 import { JSONAwardsData } from '@/types/json';
 import React, { useState } from 'react';
 import * as s from '../style.css';
@@ -28,7 +29,7 @@ export default function HomeAwardsAccordion(props: HomeAwardsAccordionProps) {
             key={index}
             title={item.year.toString()}
             className={s.awardItem}>
-            <Typo as={'span'} size={14} color={'rgba(33, 46, 56, 0.56)'}>
+            <Typo as={'span'} size={14} color={colorVars._55}>
               {item.items.map((award, index) => (
                 <React.Fragment key={index}>
                   {award}
@@ -41,7 +42,7 @@ export default function HomeAwardsAccordion(props: HomeAwardsAccordionProps) {
       </div>
       {!showAll && (
         <button className={s.more} onClick={() => setShowAll(!showAll)}>
-          <Typo size={14} weight={weight.semibold} color={'#fff'}>
+          <Typo size={14} weight={weight.semibold} color={colorVars._80}>
             더 보기
           </Typo>
         </button>

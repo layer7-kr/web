@@ -16,8 +16,8 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeProvider
-      attribute='class'
-      enableSystem={false}
+      attribute='data-theme'
+      enableSystem={true}
       defaultTheme={'system'}
       storageKey={'theme'}>
       {children}

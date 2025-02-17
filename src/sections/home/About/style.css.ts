@@ -1,23 +1,24 @@
-import { flexCenter, flexColumn, flexRow } from "@/lib/utils/styles/flex";
-import { weight } from "@/styles/fonts/values/weight";
-import { globalStyle, style } from "@vanilla-extract/css";
+import { flexCenter, flexColumn, flexRow } from '@/lib/utils/styles/flex';
+import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 export const base = style({
-  width: "100%",
+  width: '100%',
 
-  padding: "165px 30px",
+  padding: '165px 30px',
 
   ...flexColumn({
     gap: 140,
-    align: "center",
+    align: 'center',
   }),
 
-  "@media": {
-    "(max-width: 1024px)": {
-      padding: "60px 30px",
+  '@media': {
+    '(max-width: 1024px)': {
+      padding: '60px 30px',
       gap: 100,
     },
-    "(max-width: 450px)": {
+    '(max-width: 450px)': {
       gap: 60,
     },
   },
@@ -27,39 +28,39 @@ export const divider = style({
   width: 250,
   height: 1,
 
-  border: "none",
+  border: 'none',
 
-  backgroundColor: "#BFBFBF",
+  backgroundColor: colorVars._20,
 
-  "@media": {
-    "(max-width: 600px)": {
+  '@media': {
+    '(max-width: 600px)': {
       width: 100,
     },
-    "(max-width: 450px)": {
-      marginRight: "auto",
+    '(max-width: 450px)': {
+      marginRight: 'auto',
     },
   },
 });
 
 // Top section
 export const topSection = style({
-  width: "100%",
+  width: '100%',
 
   ...flexRow({
     gap: 100,
-    justify: "center",
+    justify: 'center',
   }),
 
-  "@media": {
-    "(max-width: 1536px)": {
+  '@media': {
+    '(max-width: 1536px)': {
       gap: 0,
-      justifyContent: "space-around",
+      justifyContent: 'space-around',
     },
-    "(max-width: 1024px)": {
+    '(max-width: 1024px)': {
       ...flexColumn({
         gap: 64,
       }),
-      width: "fit-content",
+      width: 'fit-content',
     },
   },
 });
@@ -83,8 +84,8 @@ export const historySection = style({
     gap: 19,
   }),
 
-  "@media": {
-    "(max-width: 1024px)": {
+  '@media': {
+    '(max-width: 1024px)': {
       padding: 0,
     },
   },
@@ -97,15 +98,15 @@ export const historyContent = style({
 // Bottom section
 export const nowSection = style({
   ...flexCenter({
-    direction: "column",
+    direction: 'column',
     gap: 32,
   }),
 
-  "@media": {
-    "(max-width: 1175px)": {
+  '@media': {
+    '(max-width: 1175px)': {
       gap: 22,
     },
-    "(max-width: 450px)": {
+    '(max-width: 450px)': {
       ...flexColumn({
         gap: 16,
       }),
@@ -116,21 +117,21 @@ export const nowSection = style({
 export const nowContent = style({
   maxWidth: 700,
 
-  textAlign: "center",
+  textAlign: 'center',
 
-  "@media": {
-    "(max-width: 450px)": {
-      textAlign: "left",
+  '@media': {
+    '(max-width: 450px)': {
+      textAlign: 'left',
     },
   },
 });
 
 export const textAlignLeft = style({
-  textAlign: "left",
+  textAlign: 'left',
 });
 
 globalStyle(`${nowContent} b`, {
   fontWeight: weight.semibold,
 
-  color: "inherit",
+  color: 'inherit',
 });

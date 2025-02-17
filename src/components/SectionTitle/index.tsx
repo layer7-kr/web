@@ -1,5 +1,6 @@
-import { weight } from "@/styles/fonts/values/weight";
-import Typo from "../Typo";
+import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
+import Typo from '../Typo';
 
 export default function SectionTitle({
   children,
@@ -12,7 +13,11 @@ export default function SectionTitle({
   };
 
   return (
-    <Typo as={"h2"} weight={weight.semibold} size={TitleSize}>
+    <Typo
+      as={'h2'}
+      weight={weight.semibold}
+      size={TitleSize}
+      color={colorVars.normal}>
       {children}
     </Typo>
   );

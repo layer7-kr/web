@@ -1,6 +1,7 @@
 'use client';
 
 import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
@@ -43,14 +44,14 @@ export default function Accordion(props: AccordionProps) {
         style={{
           overflow: 'hidden',
         }}
-        initial={{ height: titleHeight }}
+        initial={{ height: isOpen ? 'auto' : titleHeight }}
         animate={{ height: isOpen ? 'auto' : titleHeight }}
         transition={{
           duration: 0.3,
           ease: 'easeInOut',
         }}>
         <div className={s.label} ref={titleRef}>
-          <Typo size={16} weight={weight.semibold}>
+          <Typo size={16} weight={weight.medium} color={colorVars.normal}>
             {title}
           </Typo>
           <motion.div

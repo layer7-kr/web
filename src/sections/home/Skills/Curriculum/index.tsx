@@ -1,12 +1,13 @@
-import Typo from "@/components/Typo";
-import * as s from "./style.css";
-import { weight } from "@/styles/fonts/values/weight";
+import Typo from '@/components/Typo';
+import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
+import * as s from './style.css';
 
 interface CurriculumProps {
   name: string;
   description: string;
   index: number;
-  located: "first" | "last" | "middle";
+  located: 'first' | 'last' | 'middle';
 }
 
 export default function Curriculum({
@@ -22,15 +23,14 @@ export default function Curriculum({
         <div className={s.line} data-located={located} />
       </div>
       <div className={s.contentContainer}>
-        <Typo as="h3" size={18} weight={weight.medium}>
+        <Typo as='h3' size={18} weight={weight.medium} color={colorVars._95}>
           {index}. {name}
         </Typo>
         <Typo
           size={13}
           weight={weight.regular}
-          color="#666666"
-          className={s.description}
-        >
+          color={colorVars._80}
+          className={s.description}>
           {description}
         </Typo>
       </div>

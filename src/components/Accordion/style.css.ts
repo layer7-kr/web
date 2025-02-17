@@ -1,4 +1,5 @@
 import { flexBetween } from '@/lib/utils/styles/flex';
+import { colorVars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const base = style({
@@ -9,7 +10,7 @@ export const base = style({
 });
 
 export const active = style({
-  outline: '1.5px solid #047EE9',
+  outline: `1.5px solid ${colorVars.point}`,
 });
 
 export const label = style({

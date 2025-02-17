@@ -1,12 +1,12 @@
-import Typo from "@/components/Typo";
-import * as s from "./style.css";
-import { weight } from "@/styles/fonts/values/weight";
+import Typo from '@/components/Typo';
+import { weight } from '@/styles/fonts/values/weight';
+import { colorVars } from '@/styles/theme.css';
 import {
   AboutArticleDescription,
   AboutArticleTitle,
   AboutVisionTextBreakpoints,
-} from "./shared";
-import { sub } from "framer-motion/client";
+} from './shared';
+import * as s from './style.css';
 
 export default function HomeAboutSection() {
   return (
@@ -17,29 +17,29 @@ export default function HomeAboutSection() {
             <Typo
               size={AboutVisionTextBreakpoints.subject}
               weight={weight.medium}
-              as="h2"
-            >
+              color={colorVars.normal}
+              as='h2'>
               VISION
             </Typo>
             <Typo
               size={AboutVisionTextBreakpoints.title}
               weight={weight.semibold}
-              as="h3"
-            >
+              color={colorVars.normal}
+              as='h3'>
               열정, 책임감, 친근함
             </Typo>
           </div>
           <Typo
             size={AboutVisionTextBreakpoints.description}
             weight={weight.regular}
-          >
+            color={colorVars._80}>
             공부 하고자 하는 열정, 보안인으로써의 책임감, <br />
             학교 선후배로써의 친근함은 동아리의 지향점입니다.
           </Typo>
         </article>
         <article className={s.historySection}>
           <AboutArticleTitle>HOW WE STARTED IT</AboutArticleTitle>
-          <AboutArticleDescription textAlign="left">
+          <AboutArticleDescription textAlign='left'>
             Layer7은 선린인터넷고등학교가 서울시 최초 IT 특성화 고등학교로
             지정된 2001년 부터 학교와 함께해 왔습니다. 보안에 관심 있는
             학생들끼리 모여 동아리를 만들고, 해킹이라는 흔치 않은 분야에서
