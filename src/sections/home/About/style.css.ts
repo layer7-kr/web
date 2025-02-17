@@ -5,7 +5,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 export const base = style({
   width: "100%",
 
-  padding: "165px 20px",
+  padding: "165px 30px",
 
   ...flexColumn({
     gap: 140,
@@ -13,8 +13,8 @@ export const base = style({
   }),
 
   '@media': {
-    '(max-width: 1000px)': {
-      padding: "60px 20px",
+    '(max-width: 1024px)': {
+      padding: "60px 30px",
       gap: 100,
     },
     '(max-width: 450px)': {
@@ -43,15 +43,23 @@ export const divider = style({
 
 // Top section
 export const topSection = style({
+  width: "100%",
+
   ...flexRow({
     gap: 100,
+    justify: 'center',
   }),
 
   '@media': {
-    '(max-width: 1000px)': {
+    '(max-width: 1536px)': {
+      gap: 0,
+      justifyContent: "space-around"
+    },
+    '(max-width: 1024px)': {
       ...flexColumn({
-        gap: 100,
+        gap: 64,
       }),
+      width: 'fit-content',
     },
   }
 });
@@ -76,19 +84,14 @@ export const historySection = style({
   }),
 
   '@media': {
-    '(max-width: 1000px)': {
+    '(max-width: 1024px)': {
       padding: "0",
     },
   }
 });
 
 export const historyContent = style({
-  maxWidth: 620,
-  '@media': {
-    '(max-width: 1175px)': {
-      maxWidth: 450,
-    },
-  }
+  maxWidth: 520,
 });
 
 // Bottom section

@@ -10,10 +10,8 @@ export default function HomeAboutSection() {
           <div className={s.visionTitle}>
             <Typo
               size={{
-                600: 24,
-                1000: 28,
-                1175: 18,
-                1330: 22,
+                640: 20,
+                1536: 28,
                 default: 28,
               }}
               weight={weight.medium}
@@ -24,10 +22,8 @@ export default function HomeAboutSection() {
             </Typo>
             <Typo
               size={{
-                600: 36,
-                1000: 46,
-                1175: 32,
-                1330: 40,
+                640: 32,
+                1536: 42,
                 default: 52,
               }}
               weight={weight.semibold}
@@ -39,9 +35,8 @@ export default function HomeAboutSection() {
           </div>
           <Typo
             size={{
-              600: 18,
-              1000: 26,
-              1330: 18,
+              640: 18,
+              1536: 18,
               default: 24,
             }}
             weight={weight.regular}
@@ -53,10 +48,10 @@ export default function HomeAboutSection() {
         </article>
         <article className={s.historySection}>
           <Typo
-            size={{ 
-              600: 24,
-              1175: 28,
-              1330: 32, default: 42 
+            size={{
+              640: 24,
+              1536: 32,
+              default: 42,
             }}
             weight={weight.bold}
             color={"#000"}
@@ -64,11 +59,10 @@ export default function HomeAboutSection() {
             HOW WE STARTED IT
           </Typo>
           <Typo
-            size={{ 
-              600: 18,
-              1175: 22,
-              1330: 20,
-              default: 24 
+            size={{
+              640: 18,
+              1536: 20,
+              default: 24,
             }}
             weight={weight.regular}
             color={"#808080"}
@@ -84,22 +78,21 @@ export default function HomeAboutSection() {
       </div>
       <hr className={s.divider} />
       <div className={s.nowSection}>
-        <Typo size={{
-          600: 28,
-          1000: 36,
-          1175: 28,
-          1330: 36,
-          default: 46
-        }} weight={weight.bold} color={"#000"}>
+        <Typo
+          size={{
+            640: 28,
+            default: 46,
+          }}
+          weight={weight.bold}
+          color={"#000"}
+        >
           NOW
         </Typo>
         <Typo
           size={{
-            600: 18,
-            1000: 24,
-            1175: 18,
-            1330: 20,
-            default: 24
+            640: 18,
+              1536: 20,
+              default: 24,
           }}
           weight={weight.regular}
           color={"#808080"}
