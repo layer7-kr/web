@@ -47,7 +47,7 @@ export default function Accordion(props: AccordionProps) {
           style={{
             overflow: 'hidden',
           }}
-          initial={{ height: isOpen ? 'auto' : titleHeight }}
+          initial={{ height: titleHeight }}
           animate={{ height: isOpen ? 'auto' : titleHeight }}
           transition={{
             duration: 0.3,
