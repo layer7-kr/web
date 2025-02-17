@@ -15,6 +15,10 @@ export const active = style({
   outline: `1.5px solid ${colorVars.point}`,
 });
 
+export const title = style({
+  userSelect: 'none',
+});
+
 export const label = style({
   width: '100%',
   ...flexBetween(),

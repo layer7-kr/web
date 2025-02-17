@@ -51,7 +51,11 @@ export default function Accordion(props: AccordionProps) {
           ease: 'easeInOut',
         }}>
         <div className={s.label} ref={titleRef}>
-          <Typo size={16} weight={weight.medium} color={colorVars.normal}>
+          <Typo
+            size={16}
+            weight={weight.medium}
+            color={colorVars.normal}
+            className={s.title}>
             {title}
           </Typo>
           <motion.div

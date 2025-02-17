@@ -1,12 +1,12 @@
 [
-    {
-        "name": "홍길동",
-        "phone": "010-1234-5678",
-        "email": "dummy@gmail.com"
-    },
-    {
-        "name": "홍길동2",
-        "phone": "010-1234-5678",
-        "email": "dummy@gmail.com"
-    }    
+  {
+    "name": "이동건 (부장)",
+    "phone": "(+82) 010-2378-4803",
+    "email": "beef@layer7.kr"
+  },
+  {
+    "name": "장재영 (부부장)",
+    "phone": "(+82) 010-5967-4853",
+    "email": "boramae@layer7.kr"
+  }
 ]
