@@ -30,6 +30,7 @@ export const title = style({
 });
 
 export const skillTags = style({
+  maxWidth: 400,
   ...flexCenter({
     gap: 16,
     wrap: 'wrap',
