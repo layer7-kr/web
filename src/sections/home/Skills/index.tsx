@@ -1,7 +1,6 @@
 import Typo from "@/components/Typo";
 import { weight } from "@/styles/fonts/values/weight";
 import * as s from "./style.css";
-import Curriculum from "./Curriculum";
 import CurriculumItemList from "./CurriculumList";
 import SectionTitle from "@/components/SectionTitle";
 

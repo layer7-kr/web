@@ -2,9 +2,10 @@ import { flexCenter, flexColumn, flexRow } from "@/lib/utils/styles/flex";
 import { globalStyle, style } from "@vanilla-extract/css";
 
 export const base = style({
+    width: "100%",
     ...flexRow({
         gap: 28
-    })
+    }),
 })
 
 export const contentContainer = style({
@@ -14,7 +15,8 @@ export const contentContainer = style({
 })
 
 export const description = style({
-    width: 300
+    width: "100%",
+    maxWidth: 300
 })
 
 export const timeline = style({
