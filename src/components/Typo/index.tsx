@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 type ResponsiveValue = {
   [key: number | string]: string | number;
@@ -34,41 +34,50 @@ export default function Typo(props: TypoProps) {
   const Element = as;
   const [currentStyles, setCurrentStyles] = useState({});
 
-  const calculateStylesForBreakpoint = useCallback((value: StyleValue, property: string) => {
-    if (typeof value !== 'object') {
-      return { [property]: value };
-    }
-
-    // Convert breakpoints to number array and sort them in ascending order
-    const breakpoints = Object.entries(value)
-      .map(([breakpoint, value]) => ({
-        breakpoint: breakpoint === 'default' ? Infinity : Number(breakpoint),
-        value
-      }))
-      .sort((a, b) => a.breakpoint - b.breakpoint);
-
-    const currentWidth = window.innerWidth;
-    
-    // Find the smallest breakpoint (excluding default)
-    const smallestBreakpoint = breakpoints.find(bp => bp.breakpoint !== Infinity);
-    
-    // If current width is smaller than or equal to the smallest breakpoint,
-    // use that breakpoint's value directly
-    if (smallestBreakpoint && currentWidth <= smallestBreakpoint.breakpoint) {
-      return { [property]: smallestBreakpoint.value };
-    }
-
-    // For larger widths, find the appropriate breakpoint
-    for (let i = breakpoints.length - 1; i >= 0; i--) {
-      if (currentWidth > breakpoints[i].breakpoint) {
-        return { [property]: breakpoints[i + 1]?.value || breakpoints[i].value };
+  const calculateStylesForBreakpoint = useCallback(
+    (value: StyleValue, property: string) => {
+      if (typeof value !== 'object') {
+        return { [property]: value };
       }
-    }
 
-    // If no breakpoint matches, use the default value
-    const defaultBreakpoint = breakpoints.find(bp => bp.breakpoint === Infinity);
-    return { [property]: defaultBreakpoint?.value || breakpoints[0].value };
-  }, []);
+      // Convert breakpoints to number array and sort them in ascending order
+      const breakpoints = Object.entries(value)
+        .map(([breakpoint, value]) => ({
+          breakpoint: breakpoint === 'default' ? Infinity : Number(breakpoint),
+          value,
+        }))
+        .sort((a, b) => a.breakpoint - b.breakpoint);
+
+      const currentWidth = window.innerWidth;
+
+      // Find the smallest breakpoint (excluding default)
+      const smallestBreakpoint = breakpoints.find(
+        (bp) => bp.breakpoint !== Infinity,
+      );
+
+      // If current width is smaller than or equal to the smallest breakpoint,
+      // use that breakpoint's value directly
+      if (smallestBreakpoint && currentWidth <= smallestBreakpoint.breakpoint) {
+        return { [property]: smallestBreakpoint.value };
+      }
+
+      // For larger widths, find the appropriate breakpoint
+      for (let i = breakpoints.length - 1; i >= 0; i--) {
+        if (currentWidth > breakpoints[i].breakpoint) {
+          return {
+            [property]: breakpoints[i + 1]?.value || breakpoints[i].value,
+          };
+        }
+      }
+
+      // If no breakpoint matches, use the default value
+      const defaultBreakpoint = breakpoints.find(
+        (bp) => bp.breakpoint === Infinity,
+      );
+      return { [property]: defaultBreakpoint?.value || breakpoints[0].value };
+    },
+    [],
+  );
 
   const updateStyles = useCallback(() => {
     const newStyles = {
@@ -79,7 +88,14 @@ export default function Typo(props: TypoProps) {
       ...calculateStylesForBreakpoint(letterSpacing, 'letterSpacing'),
     };
     setCurrentStyles(newStyles);
-  }, [size, weight, color, letterSpacing, family, calculateStylesForBreakpoint]);
+  }, [
+    size,
+    weight,
+    color,
+    letterSpacing,
+    family,
+    calculateStylesForBreakpoint,
+  ]);
 
   useEffect(() => {
     // Initial style calculation
@@ -99,9 +115,7 @@ export default function Typo(props: TypoProps) {
   }, [updateStyles]);
 
   return (
-    <Element
-      className={className}
-      style={currentStyles}>
+    <Element className={className} style={currentStyles}>
       {children}
     </Element>
   );
