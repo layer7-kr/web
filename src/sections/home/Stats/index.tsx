@@ -10,14 +10,20 @@ import { JSONClubInfoData } from "@/types/json";
 
 export default async function HomeStatsSection() {
   const Layer7Info = await getJSON<JSONClubInfoData>("_stats.json");
+
+  const titleBreakpoint = {
+    640: 32,
+    base: 48,
+  };
+
   return (
     <section className={s.base}>
       <div className={s.statsContainer}>
         <div>
-          <Typo as="h2" size={48} weight={weight.semibold}>
+          <Typo as="h2" size={titleBreakpoint} weight={weight.semibold}>
             숫자로 보는
           </Typo>
-          <Typo as="h1" size={48} weight={weight.black}>
+          <Typo as="h1" size={titleBreakpoint} weight={weight.black}>
             Layer7
           </Typo>
         </div>

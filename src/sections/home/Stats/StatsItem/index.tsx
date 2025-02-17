@@ -11,11 +11,26 @@ interface StatsItemProps {
 export default function StatsItem({ name, value, prefix }: StatsItemProps) {
   return (
     <div className={s.base}>
-      <Typo as="h3" size={20} weight={weight.medium}>
+      <Typo
+        as="h3"
+        size={{
+          640: 16,
+          base: 20,
+        }}
+        weight={weight.medium}
+      >
         {name}
       </Typo>
-      <Typo size={42} weight={weight.bold} color="#047EE9">
-        {value}{prefix}
+      <Typo
+        size={{
+          640: 28,
+          base: 38,
+        }}
+        weight={weight.bold}
+        color="#047EE9"
+      >
+        {value}
+        {prefix}
       </Typo>
     </div>
   );
