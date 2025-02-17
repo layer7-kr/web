@@ -4,6 +4,7 @@ import { weight } from "@/styles/fonts/values/weight";
 import ContactInfoItem from "./ContactInfoItem";
 import { JSONContactInfoData } from "@/types/json";
 import { getJSON } from "@/lib/json";
+import SectionTitle from "@/components/SectionTitle";
 
 export default async function HomeContactSection() {
   const ContactInfo = await getJSON<JSONContactInfoData[]>("_contact.json");
@@ -15,14 +16,7 @@ export default async function HomeContactSection() {
 
   return (
     <section className={s.base}>
-      <Typo
-        as="h2"
-        size={TitleSize}
-        weight={weight.semibold}
-        color="#212E38"
-      >
-        연락하기
-      </Typo>
+      <SectionTitle>연락하기</SectionTitle>
       <div className={s.contactList}>
         {Object.entries(ContactInfo).map(([key, value]) => (
           <ContactInfoItem key={key} {...value} />

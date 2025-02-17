@@ -2,13 +2,13 @@ import { flexBetween, flexColumn } from '@/lib/utils/styles/flex';
 import { style } from '@vanilla-extract/css';
 
 export const base = style({
-  padding: "0 20px",
+  padding: "0 30px",
   width: "min(100%, 1200px)",
 
   ...flexBetween({ align: "flex-start" }),
 
   "@media": {
-    "(max-width: 1000px)": {
+    "(max-width: 1024px)": {
       ...flexColumn({
         gap: 30,
       }),
@@ -20,11 +20,11 @@ export const items = style({
   width: 800,
   ...flexColumn({
     align: "center",
-    gap: 8,
+    gap: 16,
   }),
 
   "@media": {
-    "(max-width: 1000px)": {
+    "(max-width: 1024px)": {
       width: "100%",
     },
   },

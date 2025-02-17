@@ -5,12 +5,12 @@ export const base = style({
     width: 'min(100%, 1200px)',
 
     margin: '0 auto',
-    padding: '50px 20px',
+    padding: '50px 30px',
     
     ...flexBetween(),
 
     '@media': {
-        '(max-width: 750px)': {
+        '(max-width: 768px)': {
             ...flexColumn({
                 gap: 30
             })
@@ -24,10 +24,15 @@ export const contactList = style({
     }),
 
     '@media': {
-        '(max-width: 750px)': {
+        '(max-width: 768px)': {
+            ...flexRow({
+                justify: 'space-between'
+            })
+        },
+        '(max-width: 480px)': {
             ...flexColumn({
                 gap: 30
             })
-        }
+        },
     }
 })
