@@ -14,10 +14,10 @@ export default async function HomeStatsSection() {
     <section className={s.base}>
       <div className={s.statsContainer}>
         <div>
-          <Typo as="h2" size={48} weight={weight.semibold} color="#212E38">
+          <Typo as="h2" size={48} weight={weight.semibold}>
             숫자로 보는
           </Typo>
-          <Typo as="h1" size={48} weight={weight.black} color="#212E38">
+          <Typo as="h1" size={48} weight={weight.black}>
             Layer7
           </Typo>
         </div>

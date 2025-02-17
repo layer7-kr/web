@@ -12,7 +12,6 @@ export default function HomeSkillsSection() {
           as="h2"
           size={32}
           weight={weight.bold}
-          color="#212E38"
           className={s.title}
         >
           Skills
@@ -30,7 +29,6 @@ export default function HomeSkillsSection() {
           as="h2"
           size={32}
           weight={weight.bold}
-          color="#212E38"
           className={s.title}
         >
           커리큘럼
@@ -52,7 +50,7 @@ function SkillTag(props: SkillTagProps) {
 
   return (
     <button className={s.skillTag}>
-      <Typo size={16} weight={weight.regular} color="#212E38">
+      <Typo size={16} weight={weight.regular}>
         {name}
       </Typo>
     </button>

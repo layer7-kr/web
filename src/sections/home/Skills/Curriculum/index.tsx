@@ -22,7 +22,7 @@ export default function Curriculum({
         <div className={s.line} data-located={located} />
       </div>
       <div className={s.contentContainer}>
-        <Typo as="h3" size={18} weight={weight.medium} color="#212E38">
+        <Typo as="h3" size={18} weight={weight.medium}>
           {index}. {name}
         </Typo>
         <Typo
