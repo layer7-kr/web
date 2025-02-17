@@ -12,33 +12,33 @@ export const base = style({
     align: "center",
   }),
 
-  '@media': {
-    '(max-width: 1024px)': {
+  "@media": {
+    "(max-width: 1024px)": {
       padding: "60px 30px",
       gap: 100,
     },
-    '(max-width: 450px)': {
+    "(max-width: 450px)": {
       gap: 60,
     },
-  }
+  },
 });
 
 export const divider = style({
   width: 250,
   height: 1,
 
-  border: 'none',
+  border: "none",
 
   backgroundColor: "#BFBFBF",
 
-  '@media': {
-    '(max-width: 600px)': {
+  "@media": {
+    "(max-width: 600px)": {
       width: 100,
     },
-    '(max-width: 450px)': {
-      marginRight: 'auto'
+    "(max-width: 450px)": {
+      marginRight: "auto",
     },
-  }
+  },
 });
 
 // Top section
@@ -47,21 +47,21 @@ export const topSection = style({
 
   ...flexRow({
     gap: 100,
-    justify: 'center',
+    justify: "center",
   }),
 
-  '@media': {
-    '(max-width: 1536px)': {
+  "@media": {
+    "(max-width: 1536px)": {
       gap: 0,
-      justifyContent: "space-around"
+      justifyContent: "space-around",
     },
-    '(max-width: 1024px)': {
+    "(max-width: 1024px)": {
       ...flexColumn({
         gap: 64,
       }),
-      width: 'fit-content',
+      width: "fit-content",
     },
-  }
+  },
 });
 
 export const visionSection = style({
@@ -83,11 +83,11 @@ export const historySection = style({
     gap: 19,
   }),
 
-  '@media': {
-    '(max-width: 1024px)': {
+  "@media": {
+    "(max-width: 1024px)": {
       padding: "0",
     },
-  }
+  },
 });
 
 export const historyContent = style({
@@ -101,16 +101,16 @@ export const nowSection = style({
     gap: 32,
   }),
 
-  '@media': {
-    '(max-width: 1175px)': {
+  "@media": {
+    "(max-width: 1175px)": {
       gap: 22,
     },
-    '(max-width: 450px)': {
+    "(max-width: 450px)": {
       ...flexColumn({
         gap: 16,
-      })
-    }
-  }
+      }),
+    },
+  },
 });
 
 export const nowContent = style({
@@ -118,11 +118,15 @@ export const nowContent = style({
 
   textAlign: "center",
 
-  '@media': {
-    '(max-width: 450px)': {
+  "@media": {
+    "(max-width: 450px)": {
       textAlign: "left",
-    }
-  }
+    },
+  },
+});
+
+export const textAlignLeft = style({
+  textAlign: "left",
 });
 
 globalStyle(`${nowContent} b`, {
