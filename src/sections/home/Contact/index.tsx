@@ -7,10 +7,10 @@ import * as s from './style.css';
 export default async function HomeContactSection() {
   const ContactInfo = await getJSON<JSONContactInfoData[]>('_contact.json');
 
-  const TitleSize = {
-    750: 24,
-    default: 28,
-  };
+  // const TitleSize = {
+  //   750: 24,
+  //   default: 28,
+  // };
 
   return (
     <section className={s.base}>
