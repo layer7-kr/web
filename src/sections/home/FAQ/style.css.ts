@@ -39,4 +39,5 @@ export const items = style({
 
 export const awardItem = style({
   background: colorVars.arcBlack,
+  border: `1px solid ${colorVars._10}`,
 });
