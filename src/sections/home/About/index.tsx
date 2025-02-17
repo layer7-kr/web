@@ -1,6 +1,9 @@
+'use client';
+
 import Typo from '@/components/Typo';
 import { weight } from '@/styles/fonts/values/weight';
 import { colorVars } from '@/styles/theme.css';
+import { motion } from 'framer-motion';
 import {
   AboutArticleDescription,
   AboutArticleTitle,
@@ -12,7 +15,20 @@ export default function HomeAboutSection() {
   return (
     <section className={s.base}>
       <div className={s.topSection}>
-        <article className={s.visionSection}>
+        <motion.article
+          viewport={{ once: true }}
+          className={s.visionSection}
+          initial={{
+            opacity: 0,
+            x: -200,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}>
           <div className={s.visionTitle}>
             <Typo
               size={AboutVisionTextBreakpoints.subject}
@@ -36,8 +52,21 @@ export default function HomeAboutSection() {
             공부 하고자 하는 열정, 보안인으로써의 책임감, <br />
             학교 선후배로써의 친근함은 동아리의 지향점입니다.
           </Typo>
-        </article>
-        <article className={s.historySection}>
+        </motion.article>
+        <motion.article
+          viewport={{ once: true }}
+          className={s.historySection}
+          initial={{
+            opacity: 0,
+            x: 200,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}>
           <AboutArticleTitle>HOW WE STARTED IT</AboutArticleTitle>
           <AboutArticleDescription textAlign='left'>
             Layer7은 선린인터넷고등학교가 서울시 최초 IT 특성화 고등학교로
@@ -46,7 +75,7 @@ export default function HomeAboutSection() {
             서로가 서로를 도우며 보안을 공부해왔습니다. 체계적인 커리큘럼과
             동아리원들의 열정, 책임감은 24년이라는 역사를 뒷받침해왔습니다.
           </AboutArticleDescription>
-        </article>
+        </motion.article>
       </div>
       <hr className={s.divider} />
       <div className={s.nowSection}>
