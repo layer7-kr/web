@@ -12,8 +12,8 @@ export default function HomeHeroSection() {
       <Image
         src='/assets/background.png'
         alt='Layer7'
-        layout='fill'
-        objectFit='cover'
+        fill
+        style={{ objectFit: 'cover' }}
         quality={100}
         className={s.image}
       />

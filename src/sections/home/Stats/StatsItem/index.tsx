@@ -3,7 +3,8 @@
 import Typo from '@/components/Typo';
 import { weight } from '@/styles/fonts/values/weight';
 import { colorVars } from '@/styles/theme.css';
-import { useEffect, useState } from 'react';
+import { useInView } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import * as s from './style.css';
 
 interface StatsItemProps {
@@ -13,25 +14,33 @@ interface StatsItemProps {
 }
 
 export default function StatsItem({ name, value, prefix }: StatsItemProps) {
-  const [shownValue, setShownValue] = useState(value - 50 > 0 ? value - 50 : 0);
+  const ref = useRef(null);
+  const [shownValue, setShownValue] = useState(
+    value - 500 > 0 ? value - 500 : 0,
+  );
+
+  const isInView = useInView(ref, {
+    amount: 0.07,
+    once: true,
+  });
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setShownValue((prev) => {
-        if (prev >= value) {
-          clearInterval(interval);
-          return value;
-        }
+    if (isInView) {
+      const interval = setInterval(() => {
+        setShownValue((prevValue) => {
+          if (prevValue >= value) {
+            clearInterval(interval); // 목표값에 도달하면 중지
+            return value;
+          }
 
-        return prev + 1;
-      });
-    }, 20);
-
-    return () => clearInterval(interval);
-  }, [value]);
+          return prevValue + 1;
+        });
+      }, 30);
+    }
+  }, [isInView, shownValue, value]);
 
   return (
-    <div className={s.base}>
+    <div className={s.base} ref={ref}>
       <Typo
         as='h3'
         size={{
@@ -47,6 +56,7 @@ export default function StatsItem({ name, value, prefix }: StatsItemProps) {
           640: 28,
           base: 38,
         }}
+        as={'span'}
         weight={weight.bold}
         color={colorVars.point}>
         {shownValue}

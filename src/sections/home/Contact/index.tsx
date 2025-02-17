@@ -14,7 +14,7 @@ export default async function HomeContactSection() {
 
   return (
     <section className={s.base}>
-      <SectionTitle>연락하기</SectionTitle>
+      <SectionTitle>문의</SectionTitle>
       <div className={s.contactList}>
         {Object.entries(ContactInfo).map(([key, value]) => (
           <ContactInfoItem key={key} {...value} />
