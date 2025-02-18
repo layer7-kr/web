@@ -3,8 +3,14 @@
 import Typo from '@/components/Typo';
 import { weight } from '@/styles/fonts/values/weight';
 import { colorVars } from '@/styles/theme.css';
-import { useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import * as s from './style.css';
 
 interface StatsItemProps {
@@ -15,29 +21,18 @@ interface StatsItemProps {
 
 export default function StatsItem({ name, value, prefix }: StatsItemProps) {
   const ref = useRef(null);
-  const [shownValue, setShownValue] = useState(
-    value - 500 > 0 ? value - 500 : 0,
-  );
+  const isInView = useInView(ref, { amount: 0.07, once: true });
 
-  const isInView = useInView(ref, {
-    amount: 0.07,
-    once: true,
-  });
+  const motionValue = useMotionValue(value - 50 > 0 ? value - 50 : 0);
+  const animatedValue = useTransform(motionValue, (latest) =>
+    Math.round(latest),
+  );
 
   useEffect(() => {
     if (isInView) {
-      const interval = setInterval(() => {
-        setShownValue((prevValue) => {
-          if (prevValue >= value) {
-            clearInterval(interval); // 목표값에 도달하면 중지
-            return value;
-          }
-
-          return prevValue + 1;
-        });
-      }, 30);
+      animate(motionValue, value, { duration: 1.5, ease: 'easeOut' });
     }
-  }, [isInView, shownValue, value]);
+  }, [isInView, motionValue, value]);
 
   return (
     <div className={s.base} ref={ref}>
@@ -59,7 +54,15 @@ export default function StatsItem({ name, value, prefix }: StatsItemProps) {
         as={'span'}
         weight={weight.bold}
         color={colorVars.point}>
-        {shownValue}
+        <motion.span
+          style={{
+            fontSize: 'inherit',
+            fontWeight: 'inherit',
+            color: 'inherit',
+            display: 'inline-block',
+          }}>
+          {animatedValue}
+        </motion.span>
         {prefix}
       </Typo>
     </div>

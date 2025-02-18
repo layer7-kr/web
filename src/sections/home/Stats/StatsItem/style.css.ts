@@ -1,5 +1,5 @@
-import { flexColumn } from "@/lib/utils/styles/flex";
-import { style } from "@vanilla-extract/css";
+import { flexColumn } from '@/lib/utils/styles/flex';
+import { style } from '@vanilla-extract/css';
 
 export const base = style({
   paddingBlock: 20,
@@ -8,8 +8,8 @@ export const base = style({
     gap: 7,
   }),
 
-  "@media": {
-    "(max-width: 640px)": {
+  '@media': {
+    '(max-width: 640px)': {
       padding: 10,
     },
   },
