@@ -12,16 +12,17 @@ import * as s from './style.css';
 
 interface AccordionProps {
   title: string;
+  isOpened?: boolean;
   className?: string;
   content: string;
 }
 
 export default function Accordion(props: AccordionProps) {
-  const { title, className, content } = props;
+  const { title, isOpened = false, className, content } = props;
 
   const titleRef = useRef<HTMLDivElement>(null);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(isOpened);
   const [titleHeight, setTitleHeight] = useState(0);
 
   useEffect(() => {
