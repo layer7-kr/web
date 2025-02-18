@@ -58,16 +58,29 @@ export default function CurriculumListView({ curriculums }: Props) {
 
   return (
     <div className={s.base}>
-      <Animate order={1}>
-        <div className={s.column}>
-          {renderCurriculumItems(leftColumn, 'left')}
-        </div>
-      </Animate>
-      <Animate order={2}>
-        <div className={s.column}>
-          {renderCurriculumItems(rightColumn, 'right')}
-        </div>
-      </Animate>
+      {isMobile ? (
+        <Animate order={1}>
+          <div className={s.column}>
+            {renderCurriculumItems(leftColumn, 'left')}
+          </div>
+          <div className={s.column}>
+            {renderCurriculumItems(rightColumn, 'right')}
+          </div>
+        </Animate>
+      ) : (
+        <>
+          <Animate order={1}>
+            <div className={s.column}>
+              {renderCurriculumItems(leftColumn, 'left')}
+            </div>
+          </Animate>
+          <Animate order={2}>
+            <div className={s.column}>
+              {renderCurriculumItems(rightColumn, 'right')}
+            </div>
+          </Animate>
+        </>
+      )}
     </div>
   );
 }
