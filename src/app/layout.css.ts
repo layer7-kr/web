@@ -5,6 +5,7 @@ export const body = style({
   width: '100%',
   height: '100vh',
   background: colorVars.background,
+  transition: 'background 0.3s ease-in-out, color 0.3s ease-in-out',
 });
 
 export const header = style({

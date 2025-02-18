@@ -20,14 +20,16 @@ export default function StatsDetailItem(props: StatsDetailItemProps) {
       className={s.base}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: order * 0.175 }}>
+      transition={{ duration: 0.5, delay: order * 0.175 }}
+      viewport={{ once: true }}>
       <Typo as='h3' size={24} weight={weight.semibold} color={colorVars.normal}>
         {title}
       </Typo>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: order * 0.175 + 0.3 }}>
+        transition={{ duration: 0.5, delay: order * 0.175 + 0.3 }}
+        viewport={{ once: true }}>
         <Typo
           size={16}
           weight={weight.medium}
