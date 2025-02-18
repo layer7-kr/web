@@ -27,6 +27,7 @@ export default function HomeAwardsAccordion(props: HomeAwardsAccordionProps) {
         {visibleData.map((item, index) => (
           <Accordion
             key={index}
+            isOpened={index === 0}
             title={item.year.toString()}
             content={item.items.join('\n')}
           />
