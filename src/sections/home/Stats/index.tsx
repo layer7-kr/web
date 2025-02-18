@@ -56,15 +56,18 @@ export default async function HomeStatsSection() {
       </div>
       <div className={s.statsDetailContainer}>
         <StatsDetailItem
+          order={1}
           title='동아리 역사'
           content={`Layer7은 ${Layer7Info.startedYear}년도부터 시작된 동아리로,
 ${getYearsFromNow(Layer7Info.startedYear)}년의 역사를 가지고 있으며`}
         />
         <StatsDetailItem
+          order={2}
           title='동아리 총 수상'
           content={`${Layer7Info.totalAwards}개의 수상실적을 이루어냈으며,`}
         />
         <StatsDetailItem
+          order={3}
           title='함께 한 부원'
           content={`${Layer7Info.totalMembers}명의 부원과 함께했습니다`}
         />
