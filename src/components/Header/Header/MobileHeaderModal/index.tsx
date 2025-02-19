@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import Icon from '@/components/Icon';
@@ -13,6 +13,13 @@ interface MobileHeaderModalProps {
 export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
   const [isClosing, setIsClosing] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(onClose, 500);
@@ -22,7 +29,8 @@ export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
     <section
       className={`${s.mobileHeaderModal} ${
         isClosing ? s.mobileHeaderModalClosing : ''
-      }`}>
+      }`}
+    >
       <div className={s.mobileHeaderModalHeader}>
         <Icon
           name={IconName.CLOSE}
@@ -64,6 +72,6 @@ export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
       />
       <HeaderItem label={'FAQ'} href={'#faq'} size={30} onClick={handleClose} />
     </section>,
-    document.body,
+    document.body
   );
 }
