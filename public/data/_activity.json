@@ -1,10 +1,26 @@
 [
-    {
-        "name": "2023 HITCON CTF",
-        "imageName": "hitcon.png"
-    },
-    {
-        "name": "WACON2023 CTF",
-        "imageName": "wacon2023.png"
-    }
+  {
+    "name": "2024 ROKA Cyber Security Challenge",
+    "imageName": "2024roka.png"
+  },
+  {
+    "name": "DEFCON CTF 2024",
+    "imageName": "2024defcon.png"
+  },
+  {
+    "name": "2024 CODEGATE",
+    "imageName": "2024codegate.png"
+  },
+  {
+    "name": "WITHCON CTF 2024",
+    "imageName": "2024withcon.png"
+  },
+  {
+    "name": "WACON2023 CTF",
+    "imageName": "2024wacon.png"
+  },
+  {
+    "name": "CCE 2023",
+    "imageName": "2023cce.png"
+  }
 ]
