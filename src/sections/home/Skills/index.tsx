@@ -1,11 +1,14 @@
 import SectionTitle from '@/components/SectionTitle';
+import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 import CurriculumItemList from './CurriculumList';
 import SkillTag from './SkillTag';
 import * as s from './style.css';
 
 export default function HomeSkillsSection() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
-    <section className={s.base}>
+    <section className={s.base} style={{ paddingTop: isMobile ? 0 : 80 }}>
       <div className={s.skills}>
         <SectionTitle>Skills</SectionTitle>
         <div className={s.skillTags}>
@@ -19,7 +22,7 @@ export default function HomeSkillsSection() {
       <div
         className={s.curriculum}
         id={'curriculum'}
-        style={{ paddingTop: 80 }}>
+        style={{ paddingTop: isMobile ? 80 : 0 }}>
         <SectionTitle>커리큘럼</SectionTitle>
         <div>
           <CurriculumItemList />
