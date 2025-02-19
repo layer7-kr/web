@@ -26,10 +26,6 @@ docker compose up -d
 
 ---
 
-### LICENSE
-
-[BSD-4-Clause](https://github.com/Layer7-2025/web/blob/main/LICENSE)
-
 ### Thanks to..
 
 디자인에 도움을 주신 분들:<br>
@@ -39,3 +35,9 @@ docker compose up -d
 개발에 도움을 주신 분들:<br>
 [권지원 (선린인터넷고등학교)](https://github.com/jwkwon0817)
 [조성주 (선린인터넷고등학교)](https://github.com/iamfiro)
+
+---
+
+### LICENSE
+
+[BSD-4-Clause](https://github.com/Layer7-2025/web/blob/main/LICENSE)
