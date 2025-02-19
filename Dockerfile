@@ -32,6 +32,8 @@ COPY --from=build /app/public public
 COPY --from=build /app/package.json .
 COPY --from=deps /app/node_modules node_modules
 
+USER node
+
 EXPOSE 3000
 
 CMD ["pnpm", "run", "start"]
