@@ -1,6 +1,7 @@
 services:
   app:
-    image: layer7-2025/web
+    build: .
+    container_name: layer7-web
     ports:
       - '3000:3000'
     restart: always
