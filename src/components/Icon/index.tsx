@@ -13,7 +13,7 @@ interface IconProps {
 }
 
 export default function Icon(props: IconProps) {
-  const { name, size = 20, color = '#000', className, onClick, style } = props;
+  const { name, size = 20, color = '#000', className, onClick } = props;
 
   const IconComponent = IconNameMap[name];
 
