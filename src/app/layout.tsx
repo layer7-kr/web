@@ -25,11 +25,6 @@ export const metadata: Metadata = {
     url: 'https://new.layer7.kr',
     siteName: 'Layer7',
     description: '선린인터넷고등학교 해킹 전공 동아리',
-    images: [
-      {
-        url: 'https://raw.githubusercontent.com/tapie-kr/.github/assets/cover.png',
-      },
-    ],
   },
 };
 
