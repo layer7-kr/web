@@ -1,17 +1,17 @@
 'use client';
 
+import Icon from '@/components/Icon';
+import { IconName } from '@/components/Icon/icon-set';
+import Layer7Symbol from '@/components/Layer7Symbol';
+import Typo from '@/components/Typo';
 import { weight } from '@/styles/fonts/values/weight';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
-import Icon from '../Icon';
-import { IconName } from '../Icon/icon-set';
-import Layer7Symbol from '../Layer7Symbol';
-import Typo from '../Typo';
-import HeaderItem from './HeaderItem';
-import * as s from './style.css';
-import MobileHeaderModal from './MobileHeaderModal';
 import { useState } from 'react';
+import HeaderItem from './HeaderItem';
+import MobileHeaderModal from './MobileHeaderModal';
+import * as s from './style.css';
 
 interface HeaderProps {
   className?: string;
