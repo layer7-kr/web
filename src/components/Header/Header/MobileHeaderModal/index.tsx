@@ -5,6 +5,9 @@ import Icon from '@/components/Icon';
 import { IconName } from '@/components/Icon/icon-set';
 import HeaderItem from '../HeaderItem';
 import * as s from '../style.css';
+import { weight } from '@/styles/fonts/values/weight';
+import Typo from '@/components/Typo';
+import { useTheme } from 'next-themes';
 
 interface MobileHeaderModalProps {
   onClose: () => void;
@@ -12,6 +15,8 @@ interface MobileHeaderModalProps {
 
 export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
   const [isClosing, setIsClosing] = useState(false);
+
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -23,6 +28,10 @@ export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(onClose, 500);
+  };
+
+  const handleToggleColorScheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return createPortal(
@@ -71,6 +80,16 @@ export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
         onClick={handleClose}
       />
       <HeaderItem label={'FAQ'} href={'#faq'} size={30} onClick={handleClose} />
+      <button className={s.colorScheme} onClick={handleToggleColorScheme}>
+        <Typo size={22} weight={weight.regular} color={'#fff'}>
+          {theme === 'light' ? '라이트' : '다크'}
+        </Typo>
+        <Icon
+          name={IconName.KEYBOARD_ARROW_DOWN}
+          size={28}
+          color={'rgba(255, 255, 255, 0.67)'}
+        />
+      </button>
     </section>,
     document.body
   );

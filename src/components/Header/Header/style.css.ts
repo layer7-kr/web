@@ -44,9 +44,9 @@ export const line = style({
 
 export const colorScheme = style({
   cursor: 'pointer',
-  ...flexCenter({
-    gap: 6,
-  }),
+  ...flexRow({
+    gap: 4,
+  })
 });
 
 export const menuIcon = style({
