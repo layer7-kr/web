@@ -1,17 +1,19 @@
 import cn from 'classnames';
 import { IconName, IconNameMap } from './icon-set';
 import * as s from './style.css';
+import { CSSProperties } from 'react';
 
 interface IconProps {
   name: IconName;
   size?: number;
   color?: string;
   className?: string;
+  style?: CSSProperties;
   onClick?: () => void;
 }
 
 export default function Icon(props: IconProps) {
-  const { name, size = 20, color = '#000', className, onClick } = props;
+  const { name, size = 20, color = '#000', className, onClick, style } = props;
 
   const IconComponent = IconNameMap[name];
 
@@ -21,23 +23,24 @@ export default function Icon(props: IconProps) {
       width={size}
       height={size}
       color={color}
+      onClick={onClick}
       viewBox={`0 0 24 24`}
       style={{
         minWidth: size,
         minHeight: size,
         color: color,
-        fill: color,
+        fill: color
       }}
     />
   );
 
-  if (onClick) {
-    return (
-      <div className={s.clickable} onClick={onClick}>
-        {renderedIcon}
-      </div>
-    );
-  } else {
+  // if (onClick) {
+  //   return (
+  //     <div className={cn(className, s.clickable)} onClick={onClick}>
+  //       {renderedIcon}
+  //     </div>
+  //   );
+  // } else {
     return renderedIcon;
-  }
+  // }
 }
