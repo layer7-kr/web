@@ -16,7 +16,10 @@ export default function HomeSkillsSection() {
           <SkillTag name={'리버스 엔지니어링'} order={5} />
         </div>
       </div>
-      <div className={s.curriculum}>
+      <div
+        className={s.curriculum}
+        id={'curriculum'}
+        style={{ paddingTop: 80 }}>
         <SectionTitle>커리큘럼</SectionTitle>
         <div>
           <CurriculumItemList />

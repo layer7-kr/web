@@ -9,9 +9,9 @@ import Icon from '../Icon';
 import { IconName } from '../Icon/icon-set';
 import Layer7Symbol from '../Layer7Symbol';
 import Typo from '../Typo';
+import MobileHeaderModal from './Header/MobileHeaderModal';
 import HeaderItem from './HeaderItem';
 import * as s from './style.css';
-import MobileHeaderModal from './Header/MobileHeaderModal';
 
 interface HeaderProps {
   className?: string;
@@ -53,12 +53,12 @@ export default function Header(props: HeaderProps) {
         <Layer7Symbol size={30} onClick={handleClickLogo} />
         <div className={s.leading}>
           <div className={s.items}>
-            <HeaderItem label={'메인'} href={'#'} />
-            <HeaderItem label={'소개'} href={'#'} />
-            <HeaderItem label={'커리큘럼'} href={'#'} />
-            <HeaderItem label={'활동'} href={'#'} />
-            <HeaderItem label={'실적'} href={'#'} />
-            <HeaderItem label={'FAQ'} href={'#'} />
+            <HeaderItem label={'메인'} href={'#main'} />
+            <HeaderItem label={'소개'} href={'#about'} />
+            <HeaderItem label={'커리큘럼'} href={'#curriculum'} />
+            <HeaderItem label={'활동'} href={'#activity'} />
+            <HeaderItem label={'실적'} href={'#award'} />
+            <HeaderItem label={'FAQ'} href={'#faq'} />
           </div>
           <div className={s.line} />
           <button className={s.colorScheme} onClick={handleToggleColorScheme}>

@@ -8,7 +8,7 @@ export default async function HomeAwardsSection() {
   const data = await getJSON<JSONAwardsData[]>('_awards.json');
 
   return (
-    <section className={s.base}>
+    <section className={s.base} id={'award'} style={{ paddingTop: 80 }}>
       <SectionTitle>대회 수상실적</SectionTitle>
       <HomeAwardsAccordion data={data} />
     </section>

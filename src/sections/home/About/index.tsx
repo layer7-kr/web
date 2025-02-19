@@ -13,7 +13,7 @@ import * as s from './style.css';
 
 export default function HomeAboutSection() {
   return (
-    <section className={s.base}>
+    <section className={s.base} id={'about'} style={{ paddingTop: 80 }}>
       <div className={s.topSection}>
         <motion.article
           viewport={{ once: true }}

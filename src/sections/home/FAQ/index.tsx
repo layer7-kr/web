@@ -10,7 +10,7 @@ export default async function HomeFAQSection() {
   const data = await getJSON<JSONFAQData[]>('_faq.json');
 
   return (
-    <section className={s.base}>
+    <section className={s.base} id={'faq'} style={{ paddingTop: 80 }}>
       <div className={s.titleContainer}>
         <SectionTitle>자주 묻는 질문</SectionTitle>
         <Typo size={{ 1032: 16, default: 18 }} color={colorVars._80}>

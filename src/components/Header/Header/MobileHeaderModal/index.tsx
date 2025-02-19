@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useEffect, useState } from 'react';
 
-import * as s from '../style.css';
-import HeaderItem from '../HeaderItem';
 import Icon from '@/components/Icon';
 import { IconName } from '@/components/Icon/icon-set';
+import HeaderItem from '../HeaderItem';
+import * as s from '../style.css';
 
 interface MobileHeaderModalProps {
   onClose: () => void;
@@ -15,20 +15,14 @@ export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
 
   const handleClose = () => {
     setIsClosing(true);
-    setTimeout(onClose, 500); // Wait for animation to complete
-  };
-
-  const handleItemClick = (href: string) => {
-    handleClose();
-    // Optional: Add navigation logic here if needed
+    setTimeout(onClose, 500);
   };
 
   return createPortal(
     <section
       className={`${s.mobileHeaderModal} ${
         isClosing ? s.mobileHeaderModalClosing : ''
-      }`}
-    >
+      }`}>
       <div className={s.mobileHeaderModalHeader}>
         <Icon
           name={IconName.CLOSE}
@@ -56,10 +50,20 @@ export default function MobileHeaderModal({ onClose }: MobileHeaderModalProps) {
         size={30}
         onClick={handleClose}
       />
-      <HeaderItem label={'활동'} href={'#activity'} size={30} onClick={handleClose} />
-      <HeaderItem label={'실적'} href={'#award'} size={30} onClick={handleClose} />
+      <HeaderItem
+        label={'활동'}
+        href={'#activity'}
+        size={30}
+        onClick={handleClose}
+      />
+      <HeaderItem
+        label={'실적'}
+        href={'#award'}
+        size={30}
+        onClick={handleClose}
+      />
       <HeaderItem label={'FAQ'} href={'#faq'} size={30} onClick={handleClose} />
     </section>,
-    document.body
+    document.body,
   );
 }
