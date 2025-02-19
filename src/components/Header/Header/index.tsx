@@ -4,14 +4,14 @@ import { weight } from '@/styles/fonts/values/weight';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import { IconName } from '../Icon/icon-set';
 import Layer7Symbol from '../Layer7Symbol';
 import Typo from '../Typo';
 import HeaderItem from './HeaderItem';
 import * as s from './style.css';
-import MobileHeaderModal from './Header/MobileHeaderModal';
+import MobileHeaderModal from './MobileHeaderModal';
+import { useState } from 'react';
 
 interface HeaderProps {
   className?: string;
@@ -22,7 +22,6 @@ export default function Header(props: HeaderProps) {
 
   const { theme, setTheme } = useTheme();
 
-  const [scrollY, setScrollY] = useState(0);
   const router = useRouter();
 
   const [mobileModalVisible, setMobileModalVisible] = useState(false);
@@ -35,30 +34,18 @@ export default function Header(props: HeaderProps) {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  });
-
-  const hasBackground = scrollY > 300;
-
   return (
-    <header className={cn(s.base, hasBackground && s.background, className)}>
+    <header className={cn(s.base, className)}>
       <div className={s.container}>
         <Layer7Symbol size={30} onClick={handleClickLogo} />
         <div className={s.leading}>
           <div className={s.items}>
-            <HeaderItem label={'메인'} href={'#'} />
-            <HeaderItem label={'소개'} href={'#'} />
-            <HeaderItem label={'커리큘럼'} href={'#'} />
-            <HeaderItem label={'활동'} href={'#'} />
-            <HeaderItem label={'실적'} href={'#'} />
-            <HeaderItem label={'FAQ'} href={'#'} />
+            <HeaderItem label={'메인'} href={'#main'} />
+            <HeaderItem label={'소개'} href={'#about'} />
+            <HeaderItem label={'커리큘럼'} href={'#curriculum'} />
+            <HeaderItem label={'활동'} href={'#activity'} />
+            <HeaderItem label={'실적'} href={'#award'} />
+            <HeaderItem label={'FAQ'} href={'#faq'} />
           </div>
           <div className={s.line} />
           <button className={s.colorScheme} onClick={handleToggleColorScheme}>

@@ -21,6 +21,7 @@ export default function Icon(props: IconProps) {
       width={size}
       height={size}
       color={color}
+      viewBox={`0 0 24 24`}
       style={{
         minWidth: size,
         minHeight: size,

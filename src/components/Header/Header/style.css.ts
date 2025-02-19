@@ -16,15 +16,7 @@ export const base = style({
 export const container = style({
   width: 1200,
   ...flexBetween(),
-  zIndex: 100,
-  transition: 'background 0.3s',
 });
-
-export const background = style({
-  background: '#0E0F10',
-});
-
-
 
 export const leading = style({
   ...flexCenter({
