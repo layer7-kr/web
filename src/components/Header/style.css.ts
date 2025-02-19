@@ -11,20 +11,20 @@ export const base = style({
   paddingBlock: 20,
   paddingInline: 30,
   ...flexCenter(),
+  zIndex: 100,
+  transition:
+    'background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out',
 });
 
 export const container = style({
   width: 1200,
   ...flexBetween(),
   zIndex: 100,
-  transition: 'background 0.3s',
 });
 
 export const background = style({
   background: '#0E0F10',
 });
-
-
 
 export const leading = style({
   ...flexCenter({
