@@ -33,6 +33,7 @@ docker compose up -d
 [주현명 (선린인터넷고등학교)](https://github.com/jureuk7)
 
 개발에 도움을 주신 분들:<br>
+[장재영 (Layer7)](https://github.com/08boramae)
 [권지원 (선린인터넷고등학교)](https://github.com/jwkwon0817)
 [조성주 (선린인터넷고등학교)](https://github.com/iamfiro)
 
