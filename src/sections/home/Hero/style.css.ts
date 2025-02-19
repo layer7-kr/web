@@ -43,6 +43,12 @@ export const title = style({
   }),
 });
 
+export const buttons = style({
+  ...flexCenter({
+    gap: 20,
+  }),
+});
+
 export const titleLine = style({
   letterSpacing: '-14%',
   lineHeight: 1,
@@ -71,4 +77,12 @@ export const apply = style({
       padding: '12px 24px',
     },
   },
+});
+
+export const arrowButton = style({
+  transition: 'transform 0.2s ease-in-out',
+});
+
+export const active = style({
+  transform: 'translateX(5px)',
 });

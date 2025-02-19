@@ -2,7 +2,7 @@
 
 import Layer7Symbol from '@/components/Layer7Symbol';
 import Image from 'next/image';
-import { ApplyButton, HeroDescription, HeroTitle } from './shared';
+import { HeroDescription, HeroTitle } from './shared';
 import * as s from './style.css';
 
 export default function HomeHeroSection() {
@@ -29,7 +29,9 @@ export default function HomeHeroSection() {
             </HeroDescription>
           </div>
         </div>
-        <ApplyButton>지원하기</ApplyButton>
+        <div className={s.buttons}>
+          {/* <ApplyButton active>테스트</ApplyButton> */}
+        </div>
       </div>
     </section>
   );

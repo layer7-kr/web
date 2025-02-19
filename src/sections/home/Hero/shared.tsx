@@ -1,20 +1,23 @@
-"use client";
+'use client';
 
-import Typo from "@/components/Typo";
-import { weight } from "@/styles/fonts/values/weight";
-import { lexendMega } from "@/styles/fonts/index.css";
+import Typo from '@/components/Typo';
+import { lexendMega } from '@/styles/fonts/index.css';
+import { weight } from '@/styles/fonts/values/weight';
 
-import * as s from "./style.css";
+import * as s from './style.css';
 
-import { PropsWithChildren } from "react";
-import { IconName } from "@/components/Icon/icon-set";
-import Icon from "@/components/Icon";
+import cn from 'classnames';
+
+import Icon from '@/components/Icon';
+import { IconName } from '@/components/Icon/icon-set';
+import Link from 'next/link';
+import { PropsWithChildren, useState } from 'react';
 
 interface HeroTitleProps {
   children: React.ReactNode;
   color?: string;
 }
-export const HeroTitle = ({ children, color = "#ffffff" }: HeroTitleProps) => {
+export const HeroTitle = ({ children, color = '#ffffff' }: HeroTitleProps) => {
   return (
     <Typo
       family={lexendMega}
@@ -26,12 +29,11 @@ export const HeroTitle = ({ children, color = "#ffffff" }: HeroTitleProps) => {
       weight={weight.black}
       className={s.titleLine}
       letterSpacing={{
-        480: "-2px",
-        768: "-6px",
-        default: "-10px",
+        480: '-2px',
+        768: '-6px',
+        default: '-10px',
       }}
-      color={color}
-    >
+      color={color}>
       {children}
     </Typo>
   );
@@ -45,27 +47,50 @@ export const HeroDescription = ({ children }: PropsWithChildren) => {
         default: 18,
       }}
       weight={weight.semibold}
-      color={"#ffffff"}
-    >
+      color={'#ffffff'}>
       {children}
     </Typo>
   );
 };
 
-export const ApplyButton = ({ children }: PropsWithChildren) => {
+interface ApplyButtonProps {
+  active?: boolean;
+  href?: string;
+  children: React.ReactNode;
+}
+
+export const ApplyButton = ({
+  active = false,
+  href = '',
+  children,
+}: ApplyButtonProps) => {
+  const [isHover, setIsHover] = useState(false);
+
   return (
-    <div className={s.apply}>
-      <Typo
-        size={{
-          768: 15,
-          default: 18,
-        }}
-        weight={weight.semibold}
-        color={"#ffffff"}
-      >
-        {children}
-      </Typo>
-      <Icon name={IconName.ARROW_FORWARD} size={18} color={"#ffffff"} />
-    </div>
+    <>
+      {active && (
+        <Link
+          className={s.apply}
+          href={href}
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}>
+          <Typo
+            size={{
+              768: 15,
+              default: 18,
+            }}
+            weight={weight.semibold}
+            color={'#ffffff'}>
+            {children}
+          </Typo>
+          <Icon
+            name={IconName.ARROW_FORWARD}
+            size={18}
+            color={'#ffffff'}
+            className={cn(s.arrowButton, isHover && s.active)}
+          />
+        </Link>
+      )}
+    </>
   );
 };
