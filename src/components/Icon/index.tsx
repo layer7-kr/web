@@ -1,7 +1,7 @@
 import cn from 'classnames';
+import { CSSProperties } from 'react';
 import { IconName, IconNameMap } from './icon-set';
 import * as s from './style.css';
-import { CSSProperties } from 'react';
 
 interface IconProps {
   name: IconName;
@@ -29,7 +29,7 @@ export default function Icon(props: IconProps) {
         minWidth: size,
         minHeight: size,
         color: color,
-        fill: color
+        fill: color,
       }}
     />
   );
@@ -41,6 +41,6 @@ export default function Icon(props: IconProps) {
   //     </div>
   //   );
   // } else {
-    return renderedIcon;
+  return renderedIcon;
   // }
 }

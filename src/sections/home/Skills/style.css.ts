@@ -23,6 +23,7 @@ export const skills = style({
   ...flexColumn({
     gap: 30,
   }),
+  paddingTop: 80,
 });
 
 export const title = style({
@@ -42,4 +43,5 @@ export const curriculum = style({
   ...flexColumn({
     gap: 30,
   }),
+  paddingTop: 80,
 });
