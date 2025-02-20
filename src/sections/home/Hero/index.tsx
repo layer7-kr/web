@@ -2,7 +2,7 @@
 
 import Layer7Symbol from '@/components/Layer7Symbol';
 import Image from 'next/image';
-import { HeroDescription, HeroTitle } from './shared';
+import { ApplyButton, HeroDescription, HeroTitle } from './shared';
 import * as s from './style.css';
 
 export default function HomeHeroSection() {
@@ -30,7 +30,7 @@ export default function HomeHeroSection() {
           </div>
         </div>
         <div className={s.buttons}>
-          {/* <ApplyButton active>테스트</ApplyButton> */}
+          <ApplyButton active href='http://layer7.kr/preview24/'>2025 시연회</ApplyButton>
         </div>
       </div>
     </section>
