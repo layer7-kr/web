@@ -29,7 +29,7 @@ docker compose up -d
 ### Thanks to..
 
 Project Management:<br>
-[장재영 (Layer7)](https://github.com/08boramae)
+[이동건 (Layer7)](https://github.com/dlehdrjsgg) [장재영 (Layer7)](https://github.com/08boramae)
 
 디자인에 도움을 주신 분들:<br>
 [김형균 (선린인터넷고등학교)](https://www.instagram.com/hdxsign)
