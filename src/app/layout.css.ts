@@ -2,8 +2,9 @@ import { colorVars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const body = style({
-  width: '100%',
+  width: '100vw',
   height: '100vh',
+  overflowX: 'hidden',
   background: colorVars.background,
   transition:
     'background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out',

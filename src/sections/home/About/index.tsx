@@ -20,7 +20,7 @@ export default function HomeAboutSection() {
           className={s.visionSection}
           initial={{
             opacity: 0,
-            x: -200,
+            x: -100,
           }}
           whileInView={{
             opacity: 1,
@@ -58,7 +58,7 @@ export default function HomeAboutSection() {
           className={s.historySection}
           initial={{
             opacity: 0,
-            x: 200,
+            x: 100,
           }}
           whileInView={{
             opacity: 1,
