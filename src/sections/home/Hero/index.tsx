@@ -25,7 +25,7 @@ export default function HomeHeroSection() {
               <HeroTitle>universe</HeroTitle>
             </div>
             <HeroDescription>
-              선린인터넷고등학교 해킹 전문 동아리 Layer7
+              선린인터넷고등학교 해킹 전공 동아리 Layer7
             </HeroDescription>
           </div>
         </div>
