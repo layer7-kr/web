@@ -5,6 +5,7 @@ export const base = style({
   width: '100%',
   height: '100vh',
   ...flexCenter(),
+  position: 'relative',
 });
 
 export const image = style({

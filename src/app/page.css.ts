@@ -3,8 +3,8 @@ import { style } from '@vanilla-extract/css';
 
 export const base = style({
   width: '100vw',
-  height: '100vh',
   overflowX: 'hidden',
+  height: '100vh',
 });
 
 export const accordion = style({
