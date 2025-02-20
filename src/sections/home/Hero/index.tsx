@@ -9,7 +9,7 @@ export default function HomeHeroSection() {
   return (
     <section className={s.base} id={'main'}>
       <Image
-        src='/assets/background.png'
+        src='/assets/background.webp'
         alt='Layer7'
         fill
         style={{ objectFit: 'cover' }}
