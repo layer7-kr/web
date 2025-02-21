@@ -2,7 +2,7 @@ import { flexColumn } from '@/lib/utils/styles/flex';
 import { style } from '@vanilla-extract/css';
 
 export const base = style({
-  width: '100%',
+  width: '100vw',
   height: '100vh',
 });
 

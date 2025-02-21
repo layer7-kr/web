@@ -7,17 +7,23 @@ import {
 import { keyframes, style } from '@vanilla-extract/css';
 
 export const base = style({
-  width: '100%',
+  width: '100vw',
   paddingBlock: 20,
   paddingInline: 30,
   ...flexCenter(),
   zIndex: 100,
+  overflowX: 'hidden',
   transition:
     'background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out',
 });
 
 export const container = style({
-  width: 1200,
+  '@media': {
+    '(min-width: 1200px)': {
+      width: 1200,
+    },
+  },
+  width: '100vw',
   ...flexBetween(),
   zIndex: 100,
 });

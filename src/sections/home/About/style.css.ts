@@ -7,6 +7,7 @@ export const base = style({
   width: '100%',
 
   padding: '165px 30px',
+  overflowX: 'hidden',
 
   ...flexColumn({
     gap: 140,

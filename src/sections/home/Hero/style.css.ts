@@ -9,10 +9,13 @@ export const base = style({
 });
 
 export const image = style({
+  width: '100vw',
+  height: '100%',
   position: 'absolute',
   top: 0,
   left: 0,
   zIndex: -1,
+  overflowX: 'hidden',
 });
 
 export const container = style({

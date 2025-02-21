@@ -7,14 +7,14 @@ import {
 import { keyframes, style } from '@vanilla-extract/css';
 
 export const base = style({
-  width: '100%',
+  width: '100vw',
   paddingBlock: 20,
   paddingInline: 30,
   ...flexCenter(),
 });
 
 export const container = style({
-  width: 1200,
+  width: '100vw',
   ...flexBetween(),
 });
 
@@ -46,7 +46,7 @@ export const colorScheme = style({
   cursor: 'pointer',
   ...flexRow({
     gap: 4,
-  })
+  }),
 });
 
 export const menuIcon = style({
@@ -89,7 +89,7 @@ export const mobileHeaderModal = style({
   left: 0,
   zIndex: 1000,
 
-  width: '100%',
+  width: '100vw',
   height: '100%',
 
   backgroundColor: '#000',

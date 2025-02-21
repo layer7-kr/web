@@ -2,7 +2,7 @@ import { colorVars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const body = style({
-  width: '100%',
+  width: '100vw',
   height: '100vh',
   overflowX: 'hidden',
   background: colorVars.background,

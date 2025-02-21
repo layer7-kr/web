@@ -8,14 +8,15 @@ import * as s from './style.css';
 export default function HomeHeroSection() {
   return (
     <section className={s.base} id={'main'}>
-      <Image
-        src='/assets/background.webp'
-        alt='Layer7'
-        fill
-        style={{ objectFit: 'cover' }}
-        quality={100}
-        className={s.image}
-      />
+      <div className={s.image}>
+        <Image
+          src='/assets/background.webp'
+          alt='Layer7'
+          fill
+          style={{ objectFit: 'cover' }}
+          quality={100}
+        />
+      </div>
       <div className={s.container}>
         <div className={s.branding}>
           <Layer7Symbol size={80} />
@@ -30,7 +31,9 @@ export default function HomeHeroSection() {
           </div>
         </div>
         <div className={s.buttons}>
-          <ApplyButton active href='http://layer7.kr/preview24/'>2025 시연회</ApplyButton>
+          <ApplyButton active href='http://layer7.kr/preview24/'>
+            2025 시연회
+          </ApplyButton>
         </div>
       </div>
     </section>
