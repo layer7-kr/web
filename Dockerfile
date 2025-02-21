@@ -32,6 +32,8 @@ COPY --from=build /app/public public
 COPY --from=build /app/package.json .
 COPY --from=deps /app/node_modules node_modules
 
+RUN mkdir -p /app/.next/cache/images && chown -R node:node /app/.next
+
 USER node
 
 EXPOSE 3000
