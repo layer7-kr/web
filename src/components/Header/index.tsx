@@ -43,7 +43,7 @@ export default function Header(props: HeaderProps) {
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
-  });
+  }, []);
 
   const hasBackground = scrollY > 300;
 
