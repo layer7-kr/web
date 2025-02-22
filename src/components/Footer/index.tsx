@@ -37,13 +37,13 @@ export default function Footer() {
       </div>
       <div className={s.social}>
         <SocialButton
-          label={'facebook'}
-          href={'https://www.facebook.com/letsgolayer7'}
-        />
+            label={'instagram'} 
+            href={'https://www.instagram.com/sunrin_layer7'}
+          />
         <div className={s.line} />
         <SocialButton
-          label={'instagram'}
-          href={'https://www.instagram.com/sunrin_layer7'}
+          label={'github'}
+          href={'https://github.com/layer7-2025/web'}
         />
       </div>
     </footer>
