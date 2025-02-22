@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 
 import Header from '@/components/Header';
 import Provider from '@/components/Provider';
+import ClarityProvider from '@/components/Provider/clarity';
 import '@/styles/global.css';
 
 export const metadata: Metadata = {
@@ -40,6 +41,7 @@ export default function RootLayout({
           <Header className={s.header} />
           {children}
         </Provider>
+        <ClarityProvider />
       </body>
     </html>
   );
