@@ -42,6 +42,11 @@ export default function Footer() {
           />
         <div className={s.line} />
         <SocialButton
+          label={'facebook'}
+          href={'https://www.facebook.com/letsgolayer7'}
+        />
+        <div className={s.line} />
+        <SocialButton
           label={'github'}
           href={'https://github.com/layer7-2025/web'}
         />
