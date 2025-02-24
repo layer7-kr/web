@@ -31,7 +31,9 @@ export default function Footer() {
           className={s.copyRight}>
           © 2001-2025 Layer7, Hacking Club.
           <br />
-          All Rights Reserved.
+          <SocialButton 
+          label = {'All right reserved.'}
+          href = {'https://github.com/Layer7-2025/web/blob/main/LICENSE'} />
           <br />
         </Typo>
       </div>
