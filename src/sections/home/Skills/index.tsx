@@ -11,9 +11,10 @@ export default function HomeSkillsSection() {
         <div className={s.skillTags}>
           <SkillTag name={'C언어 프로그래밍'} order={1} />
           <SkillTag name={'웹 해킹'} order={2} />
-          <SkillTag name={'프로젝트'} order={3} />
+          <SkillTag name={'컴퓨터 구조'} order={3} />
           <SkillTag name={'시스템 해킹'} order={4} />
           <SkillTag name={'리버스 엔지니어링'} order={5} />
+          <SkillTag name={'프로젝트'} order={6} />
         </div>
       </div>
       <div className={s.curriculum} id={'curriculum'}>
