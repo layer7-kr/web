@@ -91,7 +91,7 @@ export default function HomeAboutSection() {
         viewport={{ once: true }}>
         <AboutArticleTitle>NOW</AboutArticleTitle>
         <AboutArticleDescription>
-          세계 해커들의 올림픽이라는 <b>데프콘</b>, <b>WITHCON</b>등 유명
+          세계 해커들의 올림픽이라는 <b>데프콘</b>, <b>WITHCON</b> 등 유명
           대회에서 수상하고,
           <b>국제 해킹 컨퍼런스 코드게이트</b> 등에서 준비한 프로젝트를 발표하며
           시스템, 웹, 임베디드에 아우른 분야에서 실적을 내고 있습니다.
