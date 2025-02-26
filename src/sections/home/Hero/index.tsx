@@ -31,7 +31,7 @@ export default function HomeHeroSection() {
           </div>
         </div>
         <div className={s.buttons}>
-          <ApplyButton active href='http://layer7.kr/preview24/'>
+          <ApplyButton active href='http://preview.layer7.kr/'>
             2025 시연회
           </ApplyButton>
         </div>
