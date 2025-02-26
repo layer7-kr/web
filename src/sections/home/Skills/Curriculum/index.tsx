@@ -27,7 +27,7 @@ export default function Curriculum({
           {index}. {name}
         </Typo>
         <Typo
-          size={13}
+          size={14}
           weight={weight.regular}
           color={colorVars._80}
           className={s.description}>

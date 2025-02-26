@@ -1,4 +1,4 @@
-import { flexBetween } from '@/lib/utils/styles/flex';
+import { flexBetween, flexColumn } from '@/lib/utils/styles/flex';
 import { colorVars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 

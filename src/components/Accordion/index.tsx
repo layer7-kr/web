@@ -56,7 +56,7 @@ export default function Accordion(props: AccordionProps) {
           }}>
           <div className={s.label} ref={titleRef}>
             <Typo
-              size={16}
+              size={18}
               weight={weight.medium}
               color={colorVars.normal}
               className={s.title}>
@@ -92,7 +92,7 @@ export default function Accordion(props: AccordionProps) {
             }}>
             <Typo
               as={'span'}
-              size={14}
+              size={15}
               color={colorVars._55}
               className={s.content}>
               {content.split('\n').map((item, index) => (
