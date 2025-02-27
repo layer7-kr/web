@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   keywords: [
     'Layer7',
     'layer7',
+    '레쎄',
     '레이어세븐',
     '선린인터넷고등학교',
     'sunrin',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://new.layer7.kr',
+    url: 'https://layer7.kr',
     siteName: 'Layer7',
     description: '선린인터넷고등학교 해킹 전공 동아리',
   },
