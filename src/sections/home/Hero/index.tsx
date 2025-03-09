@@ -35,6 +35,9 @@ export default function HomeHeroSection() {
           <ApplyButton active href='http://preview.layer7.kr/'>
             2025 시연회
           </ApplyButton>
+          <ApplyButton active href='https://sunrin-security.com/'>
+            지원하기
+          </ApplyButton>
         </div>
       </div>
     </section>
