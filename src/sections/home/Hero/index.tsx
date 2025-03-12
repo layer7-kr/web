@@ -32,12 +32,12 @@ export default function HomeHeroSection() {
           </div>
         </div>
         <div className={s.buttons}>
-          <ApplyButton active href='http://preview.layer7.kr/'>
+{/*           <ApplyButton active href='http://preview.layer7.kr/'>
             2025 시연회
           </ApplyButton>
           <ApplyButton active href='https://sunrin-security.com/'>
             지원하기
-          </ApplyButton>
+          </ApplyButton> */}
         </div>
       </div>
     </section>
