@@ -3,7 +3,7 @@
 import Layer7Symbol from '@/components/Layer7Symbol';
 import Image from 'next/image';
 // import { ApplyButton } from './shared';
-import { HeroDescription, HeroTitle } from './shared';
+import { ApplyButton, HeroDescription, HeroTitle } from './shared';
 import * as s from './style.css';
 
 export default function HomeHeroSection() {
@@ -37,7 +37,11 @@ export default function HomeHeroSection() {
           </ApplyButton>
           <ApplyButton active href='https://sunrin-security.com/'>
             지원하기
-          </ApplyButton> */}
+          </ApplyButton> */
+          <ApplyButton active href='https://members2025.layer7.kr/'>
+              합격자 발표
+          </ApplyButton>
+              }
         </div>
       </div>
     </section>
