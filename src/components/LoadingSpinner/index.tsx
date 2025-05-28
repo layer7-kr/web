@@ -121,17 +121,20 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
   }, []);
 
   useEffect(() => {
-    let progressInterval: NodeJS.Timeout;
-    let slowConnectionTimeout: NodeJS.Timeout;
-    let resourceCheckInterval: NodeJS.Timeout;
-    let mutationObserver: MutationObserver;
-
-    const updateProgress = () => {
+    const progressInterval: NodeJS.Timeout = setInterval(() => {
       setProgress(prev => {
         if (prev >= 85) return prev; // Cap at 85% until all resources load
         return Math.min(prev + Math.random() * 10 + 3, 85);
       });
-    };
+    }, 400);
+
+    const slowConnectionTimeout: NodeJS.Timeout = setTimeout(() => {
+      setIsSlowConnection(true);
+      setLoadingText('Loading resources...');
+    }, 3000);
+
+    let resourceCheckInterval: NodeJS.Timeout;
+    let mutationObserver: MutationObserver;
 
     const finalizeLoading = async () => {
       setProgress(90);
@@ -159,15 +162,6 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
       setTimeout(finalizeLoading, 100);
       return;
     }
-
-    // Start progress simulation
-    progressInterval = setInterval(updateProgress, 400);
-
-    // Check for slow connection after 3 seconds
-    slowConnectionTimeout = setTimeout(() => {
-      setIsSlowConnection(true);
-      setLoadingText('Loading resources...');
-    }, 3000);
 
     // Listen for different loading events
     const handleDOMContentLoaded = () => {
