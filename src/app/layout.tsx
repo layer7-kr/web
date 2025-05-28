@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 
 import Header from '@/components/Header';
 import Provider from '@/components/Provider';
+import LoadingProvider from '@/components/LoadingProvider';
 import ClarityProvider from '@/components/Provider/clarity';
 import '@/styles/global.css';
 
@@ -37,11 +38,19 @@ export default function RootLayout({
 }>) {
   return (
     <html>
+      <head>
+        <link rel="preload" href="/assets/background.webp" as="image" />
+        <link rel="preload" href="/assets/fonts/Pretendard/Pretendard-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/assets/fonts/Pretendard/Pretendard-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/assets/fonts/Pretendard/Pretendard-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body className={s.body}>
-        <Provider>
-          <Header className={s.header} />
-          {children}
-        </Provider>
+        <LoadingProvider>
+          <Provider>
+            <Header className={s.header} />
+            {children}
+          </Provider>
+        </LoadingProvider>
         <ClarityProvider />
       </body>
     </html>
