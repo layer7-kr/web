@@ -133,9 +133,6 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
       setLoadingText('Loading resources...');
     }, 3000);
 
-    let resourceCheckInterval: NodeJS.Timeout;
-    let mutationObserver: MutationObserver;
-
     const finalizeLoading = async () => {
       setProgress(90);
       setLoadingText('Loading images...');
@@ -160,7 +157,10 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
     if (document.readyState === 'complete') {
       // Even if complete, check for resources
       setTimeout(finalizeLoading, 100);
-      return;
+      return () => {
+        clearInterval(progressInterval);
+        clearTimeout(slowConnectionTimeout);
+      };
     }
 
     // Listen for different loading events
@@ -177,7 +177,7 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
     };
 
     // Set up more frequent checks for dynamic content and images
-    resourceCheckInterval = setInterval(() => {
+    const resourceCheckInterval = setInterval(() => {
       if (document.readyState === 'complete') {
         const images = document.querySelectorAll('img');
         const allImagesLoaded = Array.from(images).every(img => 
@@ -192,7 +192,7 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
     }, 500); // Check every 500ms
 
     // Set up mutation observer to watch for new images being added
-    mutationObserver = new MutationObserver((mutations) => {
+    const mutationObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.type === 'childList') {
           mutation.addedNodes.forEach((node) => {
@@ -231,9 +231,7 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
       clearInterval(progressInterval);
       clearInterval(resourceCheckInterval);
       clearTimeout(slowConnectionTimeout);
-      if (mutationObserver) {
-        mutationObserver.disconnect();
-      }
+      mutationObserver.disconnect();
     };
   }, [handleLoadComplete, checkAllResourcesLoaded]);
 
