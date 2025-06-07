@@ -9,12 +9,9 @@ interface LoadingSpinnerProps {
 
 export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState('Loading Layer7...');
-  const [isSlowConnection, setIsSlowConnection] = useState(false);
 
   const handleLoadComplete = useCallback(() => {
     setProgress(100);
-    setLoadingText('Ready!');
     
     // Add a smooth transition delay
     setTimeout(() => {
@@ -128,14 +125,8 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
       });
     }, 400);
 
-    const slowConnectionTimeout: NodeJS.Timeout = setTimeout(() => {
-      setIsSlowConnection(true);
-      setLoadingText('Loading resources...');
-    }, 3000);
-
     const finalizeLoading = async () => {
       setProgress(90);
-      setLoadingText('Loading images...');
       
       try {
         // Wait a moment for DOM to be fully ready
@@ -145,7 +136,6 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
         await checkAllResourcesLoaded();
         
         setProgress(100);
-        setLoadingText('Ready!');
         handleLoadComplete();
       } catch (error) {
         console.warn('Some resources failed to load, proceeding anyway:', error);
@@ -159,19 +149,16 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
       setTimeout(finalizeLoading, 100);
       return () => {
         clearInterval(progressInterval);
-        clearTimeout(slowConnectionTimeout);
       };
     }
 
     // Listen for different loading events
     const handleDOMContentLoaded = () => {
       setProgress(prev => Math.max(prev, 50));
-      setLoadingText('Loading content...');
     };
 
     const handleLoad = () => {
       setProgress(75);
-      setLoadingText('Finalizing...');
       // Wait longer for Next.js images to render
       setTimeout(finalizeLoading, 1000);
     };
@@ -202,7 +189,6 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
               if (newImages.length > 0) {
                 console.log(`New images detected: ${newImages.length}`);
                 // Reset the check when new images are found
-                setLoadingText('Loading new images...');
               }
             }
           });
@@ -230,7 +216,6 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
       window.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
       clearInterval(progressInterval);
       clearInterval(resourceCheckInterval);
-      clearTimeout(slowConnectionTimeout);
       mutationObserver.disconnect();
     };
   }, [handleLoadComplete, checkAllResourcesLoaded]);
@@ -254,13 +239,6 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
             style={{ width: `${progress}%` }}
           />
         </div>
-        <p className={s.text}>{loadingText}</p>
-        <p className={s.percentage} aria-hidden="true">{Math.round(progress)}%</p>
-        {isSlowConnection && (
-          <p className={s.slowConnectionText}>
-            Slow connection detected. Please wait...
-          </p>
-        )}
       </div>
     </div>
   );
