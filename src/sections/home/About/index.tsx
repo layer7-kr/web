@@ -49,7 +49,7 @@ export default function HomeAboutSection() {
             size={AboutVisionTextBreakpoints.description}
             weight={weight.regular}
             color={colorVars._80}>
-            공부 하고자 하는 열정, 보안인으로써의 책임감, <br />
+            공부하고자 하는 열정, 보안인으로써의 책임감, <br />
             학교 선후배로써의 친근함은 동아리의 지향점입니다.
           </Typo>
         </motion.article>
@@ -91,10 +91,10 @@ export default function HomeAboutSection() {
         viewport={{ once: true }}>
         <AboutArticleTitle>NOW</AboutArticleTitle>
         <AboutArticleDescription>
-          세계 해커들의 올림픽이라는 <b>데프콘</b>, <b>WITHCON</b> 등 유명
+          세계 해커들의 올림픽이라는 <b>DEFCON</b>과 <b>CODEGATE</b> 등 유명
           대회에서 수상하고,
           <b>국제 해킹 컨퍼런스 코드게이트</b> 등에서 준비한 프로젝트를 발표하며
-          시스템, 웹, 임베디드에 아우른 분야에서 실적을 내고 있습니다.
+          시스템, 웹, 임베디드 등 다양한 분야에서 우수한 성과를 내고 있습니다.
         </AboutArticleDescription>
       </motion.div>
     </section>
