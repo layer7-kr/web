@@ -91,9 +91,9 @@ export default function HomeAboutSection() {
         viewport={{ once: true }}>
         <AboutArticleTitle>NOW</AboutArticleTitle>
         <AboutArticleDescription>
-          세계 해커들의 올림픽이라는 <b>DEFCON</b>과 <b>CODEGATE</b> 등 유명
+          세계 해커들의 올림픽이라는 <b>DEFCON</b>과 <b>CODEGATE CTF</b> 등 유명
           대회에서 수상하고,
-          <b>국제 해킹 컨퍼런스 코드게이트</b> 등에서 준비한 프로젝트를 발표하며
+          <b> CODEGATE 국제 해킹 컨퍼런스</b> 등에서 준비한 프로젝트를 발표하며
           시스템, 웹, 임베디드 등 다양한 분야에서 우수한 성과를 내고 있습니다.
         </AboutArticleDescription>
       </motion.div>
