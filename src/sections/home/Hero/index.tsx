@@ -2,7 +2,7 @@
 
 import Layer7Symbol from '@/components/Layer7Symbol';
 import Image from 'next/image';
-import { ApplyButton } from './shared';
+// import { ApplyButton } from './shared';
 import { HeroDescription, HeroTitle } from './shared';
 import * as s from './style.css';
 
@@ -32,9 +32,9 @@ export default function HomeHeroSection() {
           </div>
         </div>
         <div className={s.buttons}>
-          <ApplyButton active href='https://ssf.sunrin.io/camp/layer7'>
+          {/* <ApplyButton active href='https://ssf.sunrin.io/camp/layer7'>
             2025 소프트웨어나눔축제
-          </ApplyButton>
+          </ApplyButton> */}
         </div>
       </div>
     </section>
