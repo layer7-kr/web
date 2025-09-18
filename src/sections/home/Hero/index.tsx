@@ -15,7 +15,9 @@ export default function HomeHeroSection() {
           alt='Layer7'
           fill
           style={{ objectFit: 'cover' }}
-          quality={100}
+          quality={70}
+          priority
+          sizes='100vw'
         />
       </div>
       <div className={s.container}>

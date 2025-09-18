@@ -39,7 +39,6 @@ export default function RootLayout({
   return (
     <html>
       <head>
-        <link rel="preload" href="/assets/background.webp" as="image" />
         <link rel="preload" href="/assets/fonts/Pretendard/Pretendard-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/assets/fonts/Pretendard/Pretendard-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/assets/fonts/Pretendard/Pretendard-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />

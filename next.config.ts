@@ -8,6 +8,9 @@ const withVanillaExtract = createVanillaExtractPlugin({
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,

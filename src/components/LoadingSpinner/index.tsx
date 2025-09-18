@@ -23,9 +23,21 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
     return new Promise<void>((resolve) => {
       const promises: Promise<void>[] = [];
 
-      // Check regular img elements
+      // Check only critical/above-the-fold img elements
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const isAboveFold = (el: Element) => {
+        const rect = (el as HTMLElement).getBoundingClientRect();
+        return rect.top < viewportHeight * 1.2;
+      };
+
       const images = document.querySelectorAll('img');
-      Array.from(images).forEach(img => {
+      const essentialImages = Array.from(images).filter(img => {
+        const fetchPriority = img.getAttribute('fetchpriority');
+        const loadingAttr = img.getAttribute('loading');
+        return fetchPriority === 'high' || loadingAttr === 'eager' || isAboveFold(img);
+      });
+
+      essentialImages.forEach(img => {
         if (img.complete && img.naturalWidth > 0) {
           return;
         }
@@ -53,55 +65,9 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
         }));
       });
 
-      // Specifically check for the hero background image
-      const heroBackgroundPromise = new Promise<void>((heroResolve) => {
-        const heroImg = new Image();
-        const timeout = setTimeout(() => {
-          console.warn('Hero background image timeout');
-          heroResolve();
-        }, 10000); // Extra long timeout for hero image
-        
-        heroImg.onload = () => {
-          clearTimeout(timeout);
-          console.log('Hero background image loaded successfully');
-          heroResolve();
-        };
-        
-        heroImg.onerror = () => {
-          clearTimeout(timeout);
-          console.warn('Hero background image failed to load');
-          heroResolve();
-        };
-        
-        heroImg.src = '/assets/background.webp';
-      });
-      
-      promises.push(heroBackgroundPromise);
+      // Do not duplicate hero background image fetch; rely on Next/Image priority
 
-      // Check background images in CSS
-      const elementsWithBgImages = document.querySelectorAll('*');
-      Array.from(elementsWithBgImages).forEach(el => {
-        const bgImage = window.getComputedStyle(el).backgroundImage;
-        if (bgImage && bgImage !== 'none' && bgImage.includes('url(')) {
-          const imageUrl = bgImage.match(/url\(['"]?(.*?)['"]?\)/)?.[1];
-          if (imageUrl && !imageUrl.includes('background.webp')) { // Skip hero image as we handle it separately
-            promises.push(new Promise<void>((bgResolve) => {
-              const img = new Image();
-              const timeout = setTimeout(() => bgResolve(), 6000);
-              
-              img.onload = () => {
-                clearTimeout(timeout);
-                bgResolve();
-              };
-              img.onerror = () => {
-                clearTimeout(timeout);
-                bgResolve();
-              };
-              img.src = imageUrl;
-            }));
-          }
-        }
-      });
+      // Skip scanning CSS background images to avoid blocking on decorative assets
 
       // Wait for all promises or resolve after a reasonable time
       Promise.all(promises).then(() => {
@@ -166,12 +132,22 @@ export default function LoadingSpinner({ onLoadComplete }: LoadingSpinnerProps) 
     // Set up more frequent checks for dynamic content and images
     const resourceCheckInterval = setInterval(() => {
       if (document.readyState === 'complete') {
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const isAboveFold = (el: Element) => {
+          const rect = (el as HTMLElement).getBoundingClientRect();
+          return rect.top < viewportHeight * 1.2;
+        };
+
         const images = document.querySelectorAll('img');
-        const allImagesLoaded = Array.from(images).every(img => 
-          img.complete && img.naturalWidth > 0
-        );
+        const essentialImages = Array.from(images).filter(img => {
+          const fetchPriority = img.getAttribute('fetchpriority');
+          const loadingAttr = img.getAttribute('loading');
+          return fetchPriority === 'high' || loadingAttr === 'eager' || isAboveFold(img);
+        });
+
+        const allEssentialLoaded = essentialImages.every(img => img.complete && img.naturalWidth > 0);
         
-        if (allImagesLoaded && images.length > 0) {
+        if (allEssentialLoaded && essentialImages.length > 0) {
           clearInterval(resourceCheckInterval);
           finalizeLoading();
         }

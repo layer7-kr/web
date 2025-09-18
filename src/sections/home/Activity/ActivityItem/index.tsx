@@ -13,7 +13,8 @@ export default function ActivityItem({ imageName, name }: JSONActivityData) {
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className={s.backgroundImage}
-        priority
+        loading="lazy"
+        quality={70}
       />
       <div className={s.overlay}>
         <Typo as="h3" size={16} weight={weight.semibold} color="#fff">
