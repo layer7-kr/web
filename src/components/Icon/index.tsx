@@ -3,6 +3,8 @@ import { CSSProperties } from 'react';
 import { IconName, IconNameMap } from './icon-set';
 import * as s from './style.css';
 
+export { IconName } from './icon-set';
+
 interface IconProps {
   name: IconName;
   size?: number;

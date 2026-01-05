@@ -1,26 +1,53 @@
 [
   {
-    "name": "2024 ROKA Cyber Security Challenge",
-    "imageName": "2024roka.png"
+    "name": "CCE 2025",
+    "imageName": "2025cce.png",
+    "description": "국정원이 주최하는 사이버공격방어대회(CCE)에서 청소년부 2위를 수상했습니다."
   },
   {
-    "name": "DEFCON CTF 2024",
-    "imageName": "2024defcon.png"
+    "name": "2025 CODEGATE",
+    "imageName": "2025codegate.png",
+    "description": "세계 최대 규모의 보안 컨퍼런스 CODEGATE에서 진행하는 CTF에서 주니어 부문 준우승을 수상했습니다."
   },
   {
-    "name": "2024 CODEGATE",
-    "imageName": "2024codegate.png"
+    "name": "2025 ROKA Cyber Security Challenge",
+    "imageName": "2025roka.png",
+    "description": "대한민국 육군이 주최하는 사이버 보안 경진대회에서 최우수상, 우수상을 수상했습니다."
   },
   {
-    "name": "WITHCON CTF 2024",
-    "imageName": "2024withcon.png"
+    "name": "Midnight Flag CTF 2025",
+    "imageName": "2025mid.png",
+    "description": "프랑스에서 진행하는 해킹 대회 Midnight Flag CTF에서 Junior 부문 1위를 기록했습니다."
   },
   {
-    "name": "WACON2023 CTF",
-    "imageName": "2024wacon.png"
+    "name": "LG U+ Security Hackathon 2025",
+    "imageName": "2025lg.png",
+    "description": "LG U+에서 주최하는 Security Hackathon CTF에서 최우수상을 수상했습니다."
   },
   {
-    "name": "CCE 2023",
-    "imageName": "2023cce.png"
+    "name": "화이트햇콘테스트 2025",
+    "imageName": "2025withcon.png",
+    "description": "대한민국 국방부가 주최하는 해킹방어대회에서 국방부장관상, 합참의장상을 수상했습니다."
+  },
+  {
+    "name": "2025 소프트웨어나눔축제",
+    "imageName": "2025ssf.jpg",
+    "description": "Chrome 해킹을 통한 친구 검색 기록 훔쳐보기라는 주제로 중학생 대상 캠프를 운영했으며, 동아리 부원들이 직접 프로그램 주제를 선정하고, 교재를 집필하며 수업을 진행하였습니다.",
+    "buttons": [
+      {
+        "type": "link",
+        "href": "https://ssf.sunrin.io/camp/layer7"
+      }
+    ]
+  },
+  {
+    "name": "제1회 고등학교 대항전 해킹대회(SSD CTF)",
+    "imageName": "2025ssd.png",
+    "description": "2025년 처음으로 시작된 대회로, 선린인터넷고, 세명컴퓨터고, 한국디지털미디어고가 참여하였습니다. 1학년 학생들로 팀을 구성해 온/오프라인으로 24시간 동안 CTF를 진행했으며, 대회 종료 후 시상식과 네트워킹 시간을 가졌습니다."
+  },
+  {
+    "name": "2025 Layer7 CTF",
+    "imageName": "2025l7cttf.jpg",
+    "description": "2010년 대한민국 최초 고등학생 주최 해킹 대회로 시작한 Layer7 CTF가 15주년을 맞이했습니다. 2025년 대회는 선린인터넷고등학교 주최, Dreamhack, HSPACE, ENKI Whitehat 후원으로 250명 이상이 참여한 가운데 성황리에 진행되었습니다."
   }
 ]

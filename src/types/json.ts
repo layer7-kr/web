@@ -1,6 +1,11 @@
 export type JSONActivityData = {
   name: string;
   imageName: string;
+  description?: string;
+  buttons?: Array<{
+    type: 'blog' | 'link';
+    href: string;
+  }>;
 };
 
 export type JSONClubInfoData = {
