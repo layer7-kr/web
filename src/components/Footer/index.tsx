@@ -29,7 +29,7 @@ export default function Footer() {
           size={14}
           color={'rgba(255, 255, 255, 0.5)'}
           className={s.copyRight}>
-          © 2001-2025 Layer7, Hacking Club.
+          © 2001-2026 Layer7, Hacking Club.
           <br />
           All Rights Reserved.
           <br />

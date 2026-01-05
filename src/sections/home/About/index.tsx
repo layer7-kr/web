@@ -73,7 +73,7 @@ export default function HomeAboutSection() {
             지정된 2001년 부터 학교와 함께해 왔습니다. 보안에 관심 있는
             학생들끼리 모여 동아리를 만들고, 해킹이라는 흔치 않은 분야에서
             서로가 서로를 도우며 보안을 공부해왔습니다. 체계적인 커리큘럼과
-            동아리원들의 열정, 책임감은 24년이라는 역사를 뒷받침해왔습니다.
+            동아리원들의 열정, 책임감은 25년이라는 역사를 뒷받침해왔습니다.
           </AboutArticleDescription>
         </motion.article>
       </div>
@@ -93,7 +93,7 @@ export default function HomeAboutSection() {
         <AboutArticleDescription>
           세계 해커들의 올림픽이라는 <b>DEFCON</b>과 <b>CODEGATE CTF</b> 등 유명
           대회에서 수상하고,
-          <b> CODEGATE 국제 해킹 컨퍼런스</b> 등에서 준비한 프로젝트를 발표하며
+          <b> .HACK(DotHack) 컨퍼런스</b> 등에서 준비한 프로젝트를 발표하며
           시스템, 웹, 임베디드 등 다양한 분야에서 우수한 성과를 내고 있습니다.
         </AboutArticleDescription>
       </motion.div>
