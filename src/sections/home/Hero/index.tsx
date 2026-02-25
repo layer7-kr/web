@@ -37,8 +37,12 @@ export default function HomeHeroSection() {
           {/* <ApplyButton active href='https://ssf.sunrin.io/camp/layer7'>
             2025 소프트웨어나눔축제
           </ApplyButton> */}
+          <ApplyButton active href='https://preview.layer7.kr/'>
+            2026 시연회
+          </ApplyButton>
         </div>
       </div>
-    </section>
+    </div>
+    </section >
   );
 }
