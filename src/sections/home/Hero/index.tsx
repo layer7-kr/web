@@ -2,8 +2,7 @@
 
 import Layer7Symbol from '@/components/Layer7Symbol';
 import Image from 'next/image';
-import { ApplyButton } from './shared';
-import { HeroDescription, HeroTitle } from './shared';
+import { HeroDescription, HeroTitle, ApplyButton } from './shared';
 import * as s from './style.css';
 
 export default function HomeHeroSection() {
