@@ -42,7 +42,6 @@ export default function HomeHeroSection() {
           </ApplyButton>
         </div>
       </div>
-    </div>
     </section >
   );
 }
