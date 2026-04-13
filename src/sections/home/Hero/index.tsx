@@ -39,10 +39,10 @@ export default function HomeHeroSection() {
           {/* <ApplyButton active href='https://preview.layer7.kr/'>
             2026 시연회
           </ApplyButton> */}
-
+{/* 
           <ApplyButton active href='https://members2026.layer7.kr'>
             2026 합격자 발표
-          </ApplyButton>
+          </ApplyButton> */}
         </div>
       </div>
     </section >
