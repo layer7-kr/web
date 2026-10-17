@@ -33,16 +33,9 @@ export default function HomeHeroSection() {
           </div>
         </div>
         <div className={s.buttons}>
-          {/* <ApplyButton active href='https://ssf.sunrin.io/camp/layer7'>
-            2025 소프트웨어나눔축제
-          </ApplyButton> */}
-          {/* <ApplyButton active href='https://preview.layer7.kr/'>
-            2026 시연회
-          </ApplyButton> */}
-{/* 
-          <ApplyButton active href='https://members2026.layer7.kr'>
-            2026 합격자 발표
-          </ApplyButton> */}
+            <ApplyButton active href='https://ctf.layer7.kr'>
+              Layer7 CTF 2026
+            </ApplyButton>
         </div>
       </div>
     </section >
